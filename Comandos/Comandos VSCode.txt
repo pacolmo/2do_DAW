@@ -1,0 +1,45 @@
+Navegación y Gestión de Archivos (Básicos Absolutos)
+Comando/Atajo	Descripción
+Ctrl + N	Crear un nuevo archivo.
+Ctrl + O	Abrir un archivo existente.
+Ctrl + S	Guardar el archivo actual.
+Ctrl + Shift + S	Guardar como...
+Ctrl + K S	Guardar todos los archivos abiertos.
+Ctrl + W	Cerrar la pestaña/archivo actual.
+Ctrl + K F	Cerrar la carpeta actualmente abierta.
+Navegación por el Editor y el Texto
+Comando/Atajo	Descripción
+Ctrl + Ñ (o Ctrl + ')	Abrir/Cerrar la terminal integrada.
+Ctrl + J	Abrir/Cerrar el panel inferior (terminal, problemas, output, etc.).
+Ctrl + B	Mostrar/Ocultar la barra lateral (Explorador de archivos).
+Ctrl + Shift + E	Llevar el foco al Explorador de archivos.
+Ctrl + P	Buscar y abrir rápidamente un archivo por su nombre.
+Ctrl + G	Ir a una línea número específica.
+F11	Entrar/Salir de pantalla completa.
+Ctrl + + / Ctrl + -	Acercar / Alejar (zoom) la interfaz.
+Edición de Código (Imprescindibles)
+Comando/Atajo	Descripción
+Ctrl + Z	Deshacer la última acción.
+Ctrl + Y	Rehacer la última acción deshecha.
+Ctrl + X	Cortar la línea o selección actual.
+Ctrl + C	Copiar la línea o selección actual.
+Ctrl + V	Pegar.
+Alt + ↑ / Alt + ↓	Mover la línea actual (o selección) arriba/abajo.
+Ctrl + D	Seleccionar la siguiente ocurrencia igual a la selección actual (múltiples cursores).
+Ctrl + Shift + L	Seleccionar TODAS las ocurrencias de la selección actual.
+Ctrl + /	Comentar/Descomentar la línea o selección.
+F2	Renombrar un símbolo (variable, función) en todo el archivo.
+Ctrl + F	Buscar en el archivo actual.
+Ctrl + H	Buscar y reemplazar en el archivo actual.
+Ctrl + Shift + F	Buscar en todos los archivos del proyecto.
+Ejecución y Depuración (Debugging)
+Comando/Atajo	Descripción
+F5	Iniciar la depuración (Debugging).
+Ctrl + F5	Ejecutar sin depurar.
+F9	Poner/Quitar un punto de interrupción (breakpoint).
+F10	Avanzar paso a paso (sobre una función).
+F11	Avanzar paso a paso hacia adentro (entrar en una función).
+Ctrl + Shift + D	Abrir la vista de Depuración.
+Comandos por Palabra Clave (El Más Poderoso)
+Comando	Descripción
+Ctrl + Shift + P	Abre la Paleta de Comandos. Desde aquí puedes ejecutar CUALQUIER comando de VS Code solo escribiendo su nombre. Es el más importante que debes recordar.

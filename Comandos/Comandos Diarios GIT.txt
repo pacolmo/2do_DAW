@@ -1,0 +1,84 @@
+1️ Preparar tu entorno
+
+Siempre empieza en tu rama principal:
+
+git checkout main         # Cambia a la rama principal
+git pull origin main --rebase   # Actualiza tu local con lo último del remoto
+
+
+💡 Tip: Siempre usar --rebase evita commits duplicados y mantiene tu historial limpio.
+
+2️ Trabajar y guardar cambios
+
+Ver qué cambios hay:
+
+git status
+
+
+Añadir cambios al “staging”:
+
+git add .           # Añade todos los archivos modificados
+# o
+git add archivo.txt # Añade solo un archivo específico
+
+
+Crear un commit:
+
+git commit -m "Mensaje claro y descriptivo"
+
+3️ Subir cambios al remoto
+git push origin main
+
+
+Si Git te dice que el remoto tiene cambios nuevos:
+
+git pull origin main --rebase
+git push origin main
+
+4️ Guardar cambios temporales (stash)
+
+Si necesitas actualizar tu rama sin comprometer tus cambios a medio hacer:
+
+git stash push -m "Descripción de lo que guardo"
+git pull origin main --rebase
+git stash pop
+
+
+stash push → guarda tus cambios.
+
+stash pop → los recupera después de actualizar.
+
+5️ Revisar tu repositorio
+git status       # Estado actual de la rama
+git log --oneline  # Historial resumido de commits
+git diff         # Diferencias de tus cambios no añadidos
+
+
+
+6️ Problemas comunes
+
+Conflictos al hacer rebase:
+Edita los archivos, haz git add archivo y luego:
+
+git rebase --continue
+
+
+Abortar rebase si te has confundido:
+
+git rebase --abort
+
+
+Cancelar cambios no deseados en un archivo:
+
+git restore archivo.txt
+
+
+💡 Regla de oro:
+
+pull --rebase
+
+Trabaja + add + commit
+
+push
+
+Sigue este orden y GitHub siempre tendrá lo mismo que tu local, sin sobrescribir nada.
