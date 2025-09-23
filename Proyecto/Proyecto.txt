@@ -1,0 +1,24 @@
+1a Fase Primer trimestre.
+
+-Definir proyectos y asignar equipos Sept
+ Se deciden los proyectos a desarrollar distribuir a los alumnos en equipos y les asigna un proyecto 
+
+-Ánalisis de requisitos   oct 
+ Proceso de estudio y analisis de requerimientos, definidos por el Po de la empresa y aprobados por el EE
+
+-Exposición del prototipo  Nov
+ Final de sprint 1 exposicion ante el po de la empresa y del ee del prototipo, para su aprobación.
+
+
+2da Fase Segundo Trimestre:
+
+- Desarrollo y BD Dic
+ Inicio de la configuración de los servidores remotos y el diseño y  despliegue de la BD. Inicio del desarrollo de back y front
+
+Desarrollo y Despliegue ENE
+-Continuación del desarrollo incuyendo la API y del despliegue en el servdor remoto.
+
+-Exposicion de los proyectos  Feb 
+ 
+
+
