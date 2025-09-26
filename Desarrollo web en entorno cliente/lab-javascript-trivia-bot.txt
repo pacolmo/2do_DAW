@@ -1,0 +1,19 @@
+** start of script.js **
+
+console.log("Hello! I'm your coding fun fact guide!");
+let botName = "Paco";
+let botLocation = "Spain";
+let favoriteLanguage = "JavaScript"; 
+console.log("My name is " + (botName) + " and I live on "  + (botLocation) + ".");
+console.log("My favorite programming language is " + (favoriteLanguage) + ".");
+let codingFact = (favoriteLanguage) + " use dynamic typing"; 
+console.log(codingFact);
+codingFact = (favoriteLanguage) + " It has 7 primitive types";
+console.log(codingFact);
+codingFact = (favoriteLanguage) + " For typing we will use typeScript";
+console.log(codingFact);
+console.log("It was fun sharing these facts with you. Goodbye! - " + (botName) + " from " + (botLocation) + ".");
+
+
+** end of script.js **
+
