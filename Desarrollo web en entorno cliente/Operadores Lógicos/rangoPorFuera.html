@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*Comprueba el rango por fuera
+        Escribe una condición if para comprobar que age NO está entre 14 y 90 inclusive.
+        Crea dos variantes: la primera usando NOT !, y la segunda sin usarlo.*/
+
+        let age = Number(prompt("Introduce la edad"));
+         if (!(age >= 14 && age <=90 )) {
+            console.log("La edad no esta entre 14 y 90");
+
+         } if (age < 14 || age > 90) {
+            console.log("Tienes menos de 14 o eres mayor de 90");
+         }
+    </script>
+</body>
+</html>
