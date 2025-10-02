@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!--=ARRAY=
+        Rellena un array de 50 valores de forma aleatoria, mostrándolos por pantalla.
+         Por cosas de la vida, nos interesa ver esos ordenados de  forma ascendiente y también descendiente.
+         *Usando el código del ejercicio anterior, nos interesa conocer el mínimo, máximo y la media.-->
+
+         <script>
+        let array =[];
+          for (let i = 1; i <= 50; i++) {
+            //Math.floor redondea hacia abajo
+            let aleatorio = Math.floor(Math.random() * 101);
+              array.push(aleatorio);
+          } 
+
+          array.sort((a,b) => a-b);
+            console.log("Ordenado ascendente:", array);
+        
+          array.reverse((a,b) => b-a);
+            console.log("Ordenado descendente: ", array);
+
+            //Math.max y Math.min no aceptan arrays directamente. Necesitas el spread operator (...)
+            let numeroMaximo = Math.max(...array);
+            let numeroMinimo = Math.min(...array);
+            console.log("El número máximo, es: " + numeroMaximo);
+            console.log("El número minimo, es: " + numeroMinimo);
+
+            let suma = 0;
+                //for clasico
+           /* for (let i = 0; i < array.length; i++) {
+                  suma+=array[i];
+            }*/
+            
+            for (const numero of array) {
+               suma += numero;
+            }
+            let media = suma / array.length;
+
+            console.log("La media, es: ", media);
+         </script>
+         
+<body>
+    
+</body>
+</html>
