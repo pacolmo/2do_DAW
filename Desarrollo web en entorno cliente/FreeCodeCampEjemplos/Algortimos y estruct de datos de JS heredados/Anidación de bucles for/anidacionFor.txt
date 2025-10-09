@@ -1,0 +1,18 @@
+Anidación de bucles for
+Si tiene una matriz multidimensional, puede usar la misma lógica que el punto de referencia anterior para recorrerla
+ tanto en la matriz como en cualquier submatriz. 
+ A continuación, se muestra un ejemplo:
+const arr = [
+  [1, 2], [3, 4], [5, 6]
+];
+
+for (let i = 0; i < arr.length; i++) {
+  for (let j = 0; j < arr[i].length; j++) {
+    console.log(arr[i][j]);
+  }
+}
+Esto genera cada subelemento de arruno en uno. Tenga en cuenta que, para el bucle interno, 
+estamos comprobando el .length`of` arr[i], ya que arr[i]es un array.
+
+
+Modifique la función multiplyAll  para que devuelva el producto de todos los números en las submatrices de arr.

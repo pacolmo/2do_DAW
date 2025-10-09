@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       /*let numeros = [4,2,1,5,3];
+       for (let i = 0; i < numeros.length; i++) {
+        console.log(numeros[i]);
+       }
+       numeros.push(6);
+       numeros.sort();
+       console.log(numeros);
+       console.log(numeros.indexOf(3));
+       for (const numero of numeros) {
+        console.log(numero);
+       }
+        //Literales de plantilla (cadenas de plantilla) e interpolación de cadenas
+        const name = "Jessica";
+        const greeting = `Hello, ${name}!`; // "Hello, Jessica!"
+
+       //¿Qué es ASCII y cómo funciona con charCodeAt() y fromCharCode()?
+
+       let letra = "V";
+        //Devuelve el numero que representa V en ASCII
+        console.log(letra.charCodeAt(0));
+        //Devuelve la letra que es el número 65 en la tabla ASCII   
+        let letraDos = String.fromCharCode(66);
+        console.log(letraDos);*/
+
+        let message = "Hello, world!";
+        let greeting = message.slice(0, 5);
+
+        console.log(greeting);
+        //¿Cómo puedes probar si una cadena contiene una subcadena?
+        //con includes()  *recordar que el metodo incluides es caseSensitive;
+            let phrase = "JavaScript is awesome!";
+            let result = phrase.includes("awesome");
+        /*Tambien se pueden usar indices: 
+        let result = text.includes("JavaScript", 7);*/
+        console.log(result);
+
+        /*¿Cómo se puede extraer una subcadena de una cadena?
+        Con el metodo slice();
+
+        let message = "Hello, world!";
+        let greeting = message.slice(0, 5);
+        console.log(greeting);  // Output: Hello*/
+
+        /*¿Cómo puedes eliminar espacios en blanco de una cadena?
+         trim(),trimStart(),trimEnd().
+         *Con trim eliminas espacios al principio y al final: ej " Hola "-> trim()-> "Hola"
+         *Con trimStart el espacio de antes de la cadena y con trimEnd el espacio del final de la cadena.
+       */
+
+       /*Replace:
+        *Ej : string.replace(searchValue, newValue);
+        *let text = "I love JavaScript!";
+        let newText = text.replace("JavaScript", "coding");
+        console.log(newText);  // Output: "I love coding!"
+       */
+        /*Repeat
+        ej :string.repeat(count);
+        let word = "Hello!";
+        let repeatedWord = word.repeat(3);
+        console.log(repeatedWord);  // Output: "Hello!Hello!Hello!
+        //El parametro del count siempre debe de ser un número positivo
+        y ademas un numero finito(con Infinity da error), si usas decimal redondea hacia abajo al num mas cercano
+        si pasas un 0 devuelve cadena vacia.
+        */
+        const poem = "Roses are red,\nViolets are blue,\nJavaScript is fun,\nAnd so are you.";
+        console.log(poem);
+        /*El indexOfmétodo : Este método se utiliza para buscar una subcadena dentro de una cadena. Si se encuentra la subcadena, indexOfdevuelve el índice (o posición) de la primera ocurrencia de dicha subcadena. Si no se encuentra, indexOfdevuelve -1, lo que indica que la búsqueda no tuvo éxito.
+            Código de ejemplo
+            const text = "The quick brown fox jumps over the lazy dog.";
+            console.log(text.indexOf("fox")); // 16
+            console.log(text.indexOf("cat")); // -1 */
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function randomRange(myMin, myMax) {
+  // La fórmula para generar un número entero aleatorio INCLUSIVO entre myMin y myMax es:
+  // Math.floor(Math.random() * (myMax - myMin + 1)) + myMin
+  
+  // 1. Math.random() genera un número de coma flotante entre 0 (incluido) y 1 (excluido).
+  // 2. Multiplicar por (myMax - myMin + 1) escala el número al tamaño del rango.
+  // 3. Math.floor() lo convierte en un número entero.
+  // 4. Sumar myMin desplaza el rango para que comience en myMin.
+  
+  return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin;
+}
+
+// Ejemplo de uso:
+// console.log(randomRange(5, 10)); // Devuelve un entero aleatorio entre 5 y 10 (ambos inclusive)
+    </script>
+</body>
+</html>

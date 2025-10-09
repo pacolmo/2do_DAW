@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones</title>
+</head>
+<body>
+
+    <script>
+
+        /*¿Cuál es el propósito de las funciones y cómo funcionan?
+         Las funciones son fragmentos de código reutilizables que realizan una tarea específica 
+          o calculan un valor. 
+        Una llamada de función es cuando realmente usamos o ejecutamos la función. 
+            function greet() {
+            console.log("Hello, Jessica!");
+             }
+
+            greet(); // "Hello, Jessica!"
+
+            Los parámetros son los valores que se pasarán a la función al llamarla.
+             Permiten que las funciones acepten la entrada y trabajen con ella.
+             Los argumentos son los valores reales que se pasan a la función al llamarla.
+
+             function greet(name){ // parametros
+              
+                    console.log("Hello, " + name + "!");
+                    }
+
+                    greet("Alice"); // Hello, Alice!  Argumentos
+                    greet("Nick"); // Hello, Nick!
+
+        */
+
+         /*¿Qué son las funciones de flecha y cómo funcionan?
+             Otra forma de escribir funciones en JavaScript
+             const greetings = (name) => {
+               console.log("Hello, " + name + "!");
+             };
+
+             Si su lista de parámetros solo contiene un parámetro, puede eliminar los paréntesis de la siguiente manera:
+             
+             const greetings = name => {
+               console.log("Hello, " + name + "!");
+             };
+
+             Si su función de flecha no tiene parámetros, entonces debe utilizar los paréntesis de esta manera:
+             
+             const greetings = () => {
+               console.log("Hello");
+             };
+
+             Si el cuerpo de la función solo contiene una línea de código, puedes eliminar las llaves de esta manera:
+             
+             const greetings = name => console.log("Hello, " + name + "!");
+
+            Otro concepto clave es la returninstrucción. A continuación, se muestra un ejemplo del uso de la sintaxis de función de flecha para calcular el área:
+
+            const calculateArea = (width, height) => {
+            const area = width * height;
+            return area;
+            };
+
+            console.log(calculateArea(5, 3)); // 15
+
+            Pero podríamos optimizar un poco nuestro código y devolver el cálculo mismo:
+            
+            const calculateArea = (width, height) => {
+              return width * height;
+            }; 
+            
+            ¿Qué es el alcance(Scope) en programación y cómo funcionan el alcance global, local y de bloque?
+                    
+             Las variables declaradas en el ámbito global son accesibles desde cualquier parte del código.
+             let globalVar = "I'm a global variable";
+             
+             function printGlobalVar() {
+                 console.log(globalVar);
+             }
+             
+             printGlobalVar(); // Output: "I'm a global variable"
+            
+             El ámbito local, por otro lado, se refiere a variables a las que solo se puede acceder dentro de una función. A continuación, se muestra un ejemplo de ámbito local:
+            
+            function greet() {
+                let message = "Hello, local scope!";
+                console.log(message);
+            }
+            
+            greet(); // Output: "Hello, local scope!"
+            console.log(message); // This will throw an error
+
+            Las variables declaradas con let o const dentro de un bloque solo son accesibles dentro de ese bloque. 
+            A continuación, se muestra un ejemplo del ámbito de un bloque:
+            
+            if (true) {
+                let blockVar = "I'm in a block";
+                console.log(blockVar); // Output: "I'm in a block"
+            }
+            console.log(blockVar); // This will throw an error
+            En este ejemplo, blockVarsolo se puede acceder dentro del ifbloque.
+            */
+
+if (true) {
+    let blockVar = "Hello";
+}
+console.log(blockVar);
+    </script>
+    
+</body>
+</html>

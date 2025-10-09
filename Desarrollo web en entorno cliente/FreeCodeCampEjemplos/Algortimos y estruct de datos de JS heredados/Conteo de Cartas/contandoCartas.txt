@@ -1,0 +1,26 @@
+Contando cartas
+En el juego de casino Blackjack, un jugador puede determinar si tiene ventaja 
+sobre la casa en la siguiente mano contando el número relativo de cartas altas y bajas restantes en la baraja. 
+Esto se llama conteo de cartas.
+
+Tener más cartas altas en la baraja favorece al jugador. Cada carta tiene un valor según la tabla a continuación. 
+Si el conteo es positivo, el jugador debe apostar alto. Si el conteo es cero o negativo, el jugador debe apostar bajo.
+
+Cambio de recuento	Tarjetas
++1	                2, 3, 4, 5, 6
+0	                7, 8, 9
+-1	                10, 'J', 'Q', 'K', 'A'
+
+Escribirás una función de conteo de cartas. 
+Recibirá un card parámetro, que puede ser un número o una cadena, y aumentará o disminuirá 
+la count variable global según el valor de la carta (ver tabla). La función devolverá una cadena 
+con el conteo actual y la cadena Bet si el conteo es positivo, o Hold si es cero o negativo. 
+El conteo actual y la decisión del jugador ( Beto Hold) deben estar separados por un espacio.
+
+Ejemplos de salidas: -3 Hold o 5 Bet
+
+Sugerencia:
+NO restablezca counta 0 cuando el valor sea 7, 8 o 9.
+NO devuelva una matriz.
+NO incluya comillas (simples o dobles) en la salida.
+

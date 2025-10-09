@@ -1,0 +1,44 @@
+Utilice la recursión para crear una cuenta regresiva
+En un desafío anterior , aprendiste a usar la recursión para reemplazar un forbucle. 
+Ahora, veamos una función más compleja que devuelve un array de enteros consecutivos, comenzando por 1 
+y hasta el número pasado a la función.
+
+Como se mencionó en el desafío anterior, habrá un caso base . 
+Este caso base indica a la función recursiva cuándo ya no necesita llamarse a sí misma. 
+Es un caso simple donde el valor de retorno ya se conoce. 
+También habrá una llamada recursiva que ejecuta la función original con diferentes argumentos.
+ Si la función está escrita correctamente, se alcanzará el caso base.
+
+Por ejemplo, supongamos que desea escribir una función recursiva que devuelva un array
+ con los números 1 hasta [número n]. Esta función deberá aceptar un argumento, n[número], que representa el número final.
+  Luego, deberá llamarse a sí misma con valores de [número] 
+  progresivamente más pequeños nhasta llegar a [número] 1. 
+  Podría escribir la función de la siguiente manera:
+
+function countup(n) {
+  if (n < 1) {
+    return [];
+  } else {
+    const countArray = countup(n - 1);
+    countArray.push(n);
+    return countArray;
+  }
+}
+console.log(countup(5));
+El valor [1, 2, 3, 4, 5]se mostrará en la consola.
+
+A primera vista, esto parece contradictorio, ya que el valor de n disminuye ,
+ pero los valores en el array final aumentan .
+  Esto se debe a que la inserción ocurre al final, después de que la llamada recursiva haya retornado.
+   En el punto donde nse inserta en el array, countup(n - 1)ya se ha evaluado y retornado [1, 2, ..., n - 1].
+
+
+
+Hemos definido una función llamada countdown con un parámetro ( n).
+
+La función debe usar recursividad para devolver un array que contenga los enteros na partir 1 del nparámetro.
+ Si se llama con un número menor que 1, debe devolver un array vacío. 
+ Por ejemplo, al llamar a esta función con , n = 5 
+ se devolverá el array [5, 4, 3, 2, 1].
+  La función debe usar recursividad al llamarse a sí misma y no debe usar bucles de ningún tipo.
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+function sum(arr, n) {
+  // Only change code below this line
+    function sum(arr, n) {
+  // Only change code below this line
+  if (n <= 0) {
+    // Caso base: La suma de 0 elementos es 0.
+    return 0;
+  } else {
+    // Paso recursivo: Suma el n-ésimo elemento (en el índice n-1)
+    // con la suma de los primeros n-1 elementos.
+    return sum(arr, n - 1) + arr[n - 1];
+  }
+  // Only change code above this line
+}
+  // Only change code above this line
+}
+
+    </script>
+</body>
+</html>

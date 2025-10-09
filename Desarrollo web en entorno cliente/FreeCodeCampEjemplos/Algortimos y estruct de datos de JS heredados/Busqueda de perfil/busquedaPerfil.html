@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // Setup de la colección de contactos
+const contacts = [
+  {
+    firstName: "Akira",
+    lastName: "Laine",
+    number: "0543236543",
+    likes: ["Pizza", "Coding", "Brownie Points"],
+  },
+  {
+    firstName: "Harry",
+    lastName: "Potter",
+    number: "0994372684",
+    likes: ["Hogwarts", "Magic", "Hagrid"],
+  },
+  {
+    firstName: "Sherlock",
+    lastName: "Holmes",
+    number: "0487345643",
+    likes: ["Intriguing Cases", "Violin"],
+  },
+  {
+    firstName: "Kristian",
+    lastName: "Vos",
+    number: "unknown",
+    likes: ["JavaScript", "Gaming", "Foxes"],
+  },
+];
+
+function lookUpProfile(name, prop) {
+  // Only change code below this line
+  
+  // 1. Iterar sobre todos los contactos
+  for (let i = 0; i < contacts.length; i++) {
+    
+    // Verificar si el nombre (name) coincide con firstName
+    if (contacts[i].firstName === name) {
+      
+      // 2. Si el nombre coincide, verificar si la propiedad (prop) existe
+      // Usamos hasOwnProperty para verificar propiedades propias
+      if (contacts[i].hasOwnProperty(prop)) {
+        // Si la propiedad existe, devolver su valor
+        return contacts[i][prop];
+      } else {
+        // Si la propiedad NO existe, devolver "No such property"
+        return "No such property";
+      }
+    }
+  }
+
+  // 3. Si el bucle termina sin encontrar el nombre, devolver "No such contact"
+  return "No such contact";
+
+  // Only change code above this line
+}
+
+// Ejemplos de prueba:
+ console.log(lookUpProfile("Akira", "likes"));    // Devuelve ["Pizza", "Coding", "Brownie Points"]
+// console.log(lookUpProfile("Harry", "lastName")); // Devuelve "Potter"
+// console.log(lookUpProfile("Bob", "number"));     // Devuelve "No such contact"
+// console.log(lookUpProfile("Akira", "address"));  // Devuelve "No such property"
+
+
+    </script>
+</body>
+</html>

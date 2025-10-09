@@ -1,0 +1,3 @@
+ En la checkSignfunción, utilice varios operadores condicionales 
+ (siguiendo el formato recomendado findGreaterOrEqual) para comprobar si un número es positivo, negativo o cero. 
+ La función debe devolver positive, negativeo zero.
