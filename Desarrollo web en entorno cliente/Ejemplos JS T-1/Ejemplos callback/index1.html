@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback</title>
+</head>
+        <!--Quiero que escribas una función llamada mostrarMensaje que:
+        Reciba un mensaje y una función callback.
+        Muestre el mensaje por consola.
+        Luego, llame al callback.-->
+<body>
+    <script>
+        "use strict";
+       function mostrarMensaje(mensaje,callback){
+            console.log(mensaje);
+            callback();
+       }
+            mostrarMensaje("Procesando...", function() {
+    console.log("✅ Operación completada");
+    });
+       
+    </script>
+</body>
+</html>

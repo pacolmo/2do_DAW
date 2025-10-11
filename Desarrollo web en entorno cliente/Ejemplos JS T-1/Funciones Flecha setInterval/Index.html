@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones flecha(setInterval)</title>
+</head>
+<body>
+    <!--Ejercicio 7 Ejercicio 7 — Contador simple:
+    Muestra un contador del 1 al 5 con setInterval, y detenlo al llegar a 5 con clearInterval().-->
+    <!--Ejercicio 8 Reloj digital
+    Crea una función que muestre la hora actual (HH:MM:SS) cada segundo.
+    Usa setInterval. —-->
+    <!--Ejercicio 9 Temporizador con setTimeout + setInterval
+    Haz un temporizador que cuente hacia atrás desde 5 hasta 0 y al llegar muestre:
+    "⏰ ¡Tiempo terminado!" -->
+
+    <script>
+        "use strict";
+        //Ej.7 
+        /*let contador = 1;
+        let intervalo = setInterval(() => {
+            console.log(contador);
+             
+          if (contador === 5){
+            clearInterval(intervalo);
+          } 
+         contador++;
+        }, 1000);*/
+        //Ej.8
+        /*function muestraHora() {
+            setInterval(() => {
+               let hora = new Date().toLocaleTimeString();
+                console.log(hora);
+            }, 1000);
+        }
+            muestraHora();*/
+
+        //Ej.9
+        let contador = 5;
+
+            function contadorParaAtras() {
+            let intervalo = setInterval(() => {
+                if (contador === 0) {
+                console.log("Tiempo Terminado!!");
+                clearInterval(intervalo);
+                } else {
+                console.log(contador);
+                contador--;
+                }
+            }, 1000);
+            }
+
+contadorParaAtras();
+        contadorParaAtras();
+        
+    </script>
+</body>
+</html>

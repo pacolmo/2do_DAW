@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!--⚙️ Nivel 3 – Encadenando
+8️⃣ Crea una función flecha procesarNumeros que:
+reciba un array, multiplique los números por 3,y luego filtre solo los mayores que 10.
+(Usa .map() y .filter() encadenados) -->
+<body>
+    <script>
+  "use strict";
+    let listaNumeros = [2,4,6];
+     let procesarNumeros = numeros => numeros
+     .map(nums => nums * 3)
+     .filter(nums => nums > 10);
+        console.log(procesarNumeros(listaNumeros));
+
+    </script>
+</body>
+</html>

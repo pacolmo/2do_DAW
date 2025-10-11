@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--setTimeout
+🔹 Ejercicio 5 — Mensaje con retraso
+Crea una función que muestre “Hola después de 3 segundos” usando setTimeout.-->
+<!--Ejercicio 6 — Despedida personalizada
+Crea una función flecha llamada despedir que reciba un nombre y lo muestre en consola 2 segundos después:
+"Adiós, [nombre] 👋"-->
+
+    <script>
+"use strict;"
+        //Ej.5
+        function muestraHola() {
+            setTimeout(() => {
+            alert("Hola")
+            }, 3000);
+        }
+        muestraHola();
+        //Ej.6
+        let despedir = nombre => {
+            setTimeout(() => {
+            console.log(`Adiós ${nombre}`);
+            }, 2000);
+        }
+        console.log(despedir("Paco"));
+
+    </script>
+</body>
+</html>
