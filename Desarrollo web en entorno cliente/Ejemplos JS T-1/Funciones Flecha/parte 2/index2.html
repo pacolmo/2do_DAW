@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 🧩 Nivel  – Lógica dentro
+     5️⃣ Crea una función flecha mayorEdad que reciba una edad y devuelva "Eres mayor de edad" o "Eres menor de edad".
+    6️⃣ Crea una función flecha multiplicar que multiplique todos los elementos de un array por 2.
+    (Pista: usa .map())
+    7️⃣ Crea una función flecha filtrarPares que reciba un array y devuelva solo los números pares.
+    (Pista: usa .filter())
+    
+    -->
+</body>
+<script>
+    "use strict";
+    //5.
+    let mayorEdad = edad =>(edad >= 18)? "Eres mayor de edad" : "Eres menor de edad";
+     console.log(mayorEdad(14));
+    //6
+    /*let array = [2,4,6];
+    //.map() convierte un nuevo array sin alterar el original 
+        let multiplicar = array => array.map( array => array * 2);
+    console.log(multiplicar(array));*/
+
+    //con bucle for
+    /*let array = [2,4,6];
+    let multiArray =[];
+
+     let multiplicar = numero => numero * 2;
+     
+      for (let i = 0; i < array.length; i++) {
+        multiArray.push(multiplicar(array[i]));
+           
+      }
+      console.log(multiArray);*/
+      
+      //con forEach
+      let array = [2,4,6];
+      let multiArray = [];
+
+      array.forEach(numero => multiArray.push(numero * 2));
+      console.log(multiArray);
+    
+      //7
+      let nums = [1,6,11,60];
+        let filtrarPares = nums => nums.filter(num => num % 2 === 0);
+         console.log(filtrarPares(nums));
+</script>
+</html>

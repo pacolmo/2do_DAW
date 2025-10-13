@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Modifique la función checkObj para comprobar si el objeto pasado al parámetro de función obj contiene
+      la propiedad específica pasada al parámetro de función checkProp.
+      Si la propiedad pasada a checkProp se encuentra en obj, devuelva el valor de esa propiedad. 
+      De lo contrario, devuelva Not Found.-->
+    
+      <script>
+        function checkObj(obj, checkProp) {
+  // Only change code below this line
+  if (obj.hasOwnProperty(checkProp)) {
+    return obj[checkProp];
+  } else {
+    return "Not Found";
+  }
+  // Only change code above this line
+}
+      </script>
+</body>
+</html>

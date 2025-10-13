@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booleanos y números</title>
+</head>
+<body>
+    <script>
+        //operador de igualdad regular ==  operador de igualdad estricta === (verifica tanto el valor , como el tipo)
+        //console.log(5 = 5);
+        //Operadores de comparación < < <= >=.
+
+        //¿Qué son los operadores unarios y cómo funcionan?
+        //El operador unario más convierte su operando en un número
+            /*const str = '42';
+            const strToNum = +str;
+            console.log(strToNum); // 42
+            console.log(typeof str); // string
+            console.log(typeof strToNum);//Number*/
+
+            /*El operador NOT bit a bit es un operador unario menos común. Representado por una tilde ~
+            const num = 5; // The binary for 5 is 00000101
+            console.log(~num);*/
+
+            //el typeofoperador devuelve el tipo de su operando como una cadena.
+            /*const value = 'Hello world';
+                console.log(typeof value); // string
+                */
+
+            //¿Qué son los operadores bit a bit y cómo funcionan?
+            /*Los operadores bit a bit en JavaScript son operadores especiales
+            que funcionan con las representaciones binarias de números*/
+            /*JavaScript ofrece varios operadores bit a bit, como AND ( &), OR ( |), XOR ( ^),
+             NOT ( ~), desplazamiento a la izquierda ( <<) y desplazamiento a la derecha ( >>).*/
+
+           /*let a = 5;  // Binary: 101
+                let b = 3;  // Binary: 011
+                console.log(a & b);  // Output: 1 (Binary: 001)
+                console.log(a | b);  // Output: 7 (Binary: 111)
+                console.log(a ^ b);  // Output: 6 (Binary: 110)
+                console.log(~a);  // Output: -6
+                console.log(a << 1);  // Output: 10 (Binary: 1010)
+                console.log(a >> 1);  // Output: 2 (Binary: 10)
+              */
+
+            //¿Qué son las declaraciones condicionales y cómo funcionan las declaraciones If/Else?
+              
+            /*Una if sentencia toma una condición y ejecuta un bloque de código si dicha condición es verdadera.
+            Si desea comprobar varias condiciones, puede usar un else ifbloque.
+            Esto permite que su programa elija entre más de dos rutas
+            
+            El operador ternario es una forma compacta de escribir if/elsesentencias simples. Consta de tres partes: 
+            una condición, un resultado si la condición es verdadera y un resultado si es falsa. Esta es la sintaxis básica:
+            condition ? expressionIfTrue : expressionIfFalse;
+
+            const weather = temperature > 25 ? 'sunny' : 'cool';
+            console.log(`It's a ${weather} day!`);
+            */
+
+            /* ¿Qué son los operadores lógicos binarios y cómo funcionan?
+            Los operadores lógicos binarios ayudan a evaluar dos expresiones y a obtener un resultado según su veracidad.
+            OR|| AND && 
+            El operador de fusión nulo ?? resulta útil en situaciones donde se 
+            desea devolver un valor solo si el primero es nullo undefined
+              */
+
+            /*¿Qué es el objeto Math en JavaScript y cuáles son algunos métodos comunes? 
+                El Math.random()método genera un número aleatorio de punto flotante entre 0(inclusive) y 1(exclusive
+                Math.min() toman un conjunto de números y devuelven el valor mínimo
+                Math.max()toman un conjunto de números y devuelven el valor máximo
+                Si desea redondear números al entero más cercano, puede usar los métodos Math.ceil()y Math.floor()
+                Math.round()es el híbrido de Math.ceil()y Math.floor().Redondea un núm a su entero más cercano,teniendo en cuenta la coma decimal
+
+                Math.trunc()elimina la parte decimal de un número, devolviendo solo la parte entera,sin redondear:
+                console.log(Math.trunc(2.9)); // 2
+                
+                la raíz cuadrada o la raíz cúbica de un número, puede utilizar los métodos Math.sqrt()y Math.cbrt()
+                console.log(Math.sqrt(81)); // 9
+                console.log(Math.cbrt(27)); // 3
+
+                Si necesita obtener el valor absoluto de un número, puede usar el Math.abs()método
+                console.log(Math.abs(-5)); // 5
+                console.log(Math.abs(5)); // 5
+
+                Math.pow()
+                console.log(Math.pow(2, 3)); // 8
+                console.log(Math.pow(8, 2)); // 64
+                
+                */
+
+                /*¿Cómo funciona isNaN?
+                   En JavaScript, NaNsignifica "No es un número".
+                   Es un valor especial que representa un resultado numérico irrepresentable o indefinido. 
+
+                   ¿Qué es el método toFixed() y cómo funciona?
+                  El .toFixed()método es una función integrada de JavaScript que 
+                  formatea un número usando notación de punto fijo.
+                    let num = 3.14159;
+                    console.log(num.toFixed(2)); // Output: "3.14"
+                    */
+
+                    /*¿Cómo funcionan las comparaciones con tipos de datos nulos e indefinidos?
+                      Una variable se define undefinedcuando se ha declarado, pero no se le ha asignado un valor.
+                      El null tipo, por otro lado, es un valor de asignación que representa una ausencia de valor
+                    
+                    */
+    </script>
+</body>
+</html>

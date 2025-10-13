@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+function countdown(n) {
+  // Condición Base: Si n es menor que 1, devuelve un array vacío.
+  if (n < 1) {
+    return [];
+  } else {
+    // Paso Recursivo:
+    // 1. Llama a la función con n - 1 para obtener el array restante (e.g., [4, 3, 2, 1]).
+    const countArray = countdown(n - 1);
+
+    // 2. Añade el valor actual de n al PRINCIPIO del array devuelto.
+    // El operador de propagación (...) se usa para construir el array de forma recursiva.
+    return [n, ...countArray];
+  }
+}
+
+// Ejemplo:
+// countdown(5) devuelve [5, 4, 3, 2, 1]
+// countdown(10) devuelve [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+// countdown(-1) devuelve []
+
+    </script>
+</body>
+</html>
+
+
+function countdown(n) {
+  
+  if (n < 1) {
+    return [];
+  } else {
+    const arr = countdown(n - 1);
+    return [n, ...arr];
+  }
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <!--Simular un proceso que tarda unos segundos (como una descarga),
+        y usar un callback para avisar cuando termina.
+        Instrucciones:
+        Crea una función llamada descargarArchivo que reciba:
+        un nombre de archivo (por ejemplo, "foto.png")
+        y una función callback.
+        Dentro de descargarArchivo, usa setTimeout() para simular que la descarga tarda 3 segundos.
+        Después del tiempo, muestra por consola:-->
+<script>
+    "use strict";
+    function descargarArchivo(nombreArchivo,callback) {
+        console.log("Descargando..." + nombreArchivo);
+        
+        setTimeout(() => {
+            console.log(nombreArchivo + " descargada con éxito!");
+           callback(); 
+        }, 3000);
+    }
+descargarArchivo("foto.png", function() {
+    console.log("Proceso finalazido, descarga lista para usar");
+});
+
+</script>
+</body>
+</html>

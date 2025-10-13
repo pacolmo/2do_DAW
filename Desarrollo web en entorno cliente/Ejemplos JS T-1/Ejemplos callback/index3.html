@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+            <!--Ejercicio: “Simular instalación de programa”
+            Crea tres funciones:
+            descargarPrograma(nombre, callback)
+            instalarPrograma(nombre, callback)
+            iniciarPrograma(nombre)
+            Cada una debe usar setTimeout() para simular que tarda un poco.
+            Y el flujo debe ser:
+            Descargando App...
+            (App descargada)
+            Instalando App...
+            (App instalada)
+            Iniciando App...
+            (App iniciada con éxito)-->
+<body>
+    <script>
+        function descargarPrograma(nombre,callback) {
+            console.log("Descargando app...." + nombre);
+            setTimeout(() => {
+                console.log("App "+ nombre +" descargada");
+                 callback();
+            }, 2000);
+           
+        }
+
+        function instalarPrograma(nombre,callback) {
+            console.log("Instalando app..." + nombre);
+            setTimeout(() => {
+               console.log("App " + nombre + " instalada.")
+                callback();
+            }, 4000);
+           
+        }
+        function iniciarPrograma(nombre) {
+            console.log("Iniciando app..." + nombre);
+            setTimeout(() => {
+                console.log("App " + nombre + " iniciada con éxito");
+            }, 2000);
+        }
+        descargarPrograma("AprendeCallbacks", function (){
+            console.log("Programa descargado");
+        });
+         
+        instalarPrograma("AprendeCallbacks", function (){
+            console.log("Programa instalado");
+        });
+        iniciarPrograma("AprendeCallbacks", function () {
+            console.log("Iniciando el programa");
+        });
+    </script>
+</body>
+</html>

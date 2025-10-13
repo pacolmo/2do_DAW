@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function rangeOfNumbers(startNum, endNum) {
+  // Condición Base: Si los números son iguales, devuelve un array con ese único número.
+  if (startNum === endNum) {
+    return [startNum];
+  } else {
+    // Paso Recursivo: 
+    // 1. Obtiene el array del rango que empieza en 'startNum' y termina en 'endNum - 1'.
+    const numbers = rangeOfNumbers(startNum, endNum - 1);
+    
+    // 2. Añade el 'endNum' actual al final del array devuelto.
+    numbers.push(endNum);
+    
+    // 3. Devuelve el array completo.
+    return numbers;
+  }
+}
+
+// Ejemplo: rangeOfNumbers(4, 7) devolverá [4, 5, 6, 7]
+    </script>
+</body>
+</html>

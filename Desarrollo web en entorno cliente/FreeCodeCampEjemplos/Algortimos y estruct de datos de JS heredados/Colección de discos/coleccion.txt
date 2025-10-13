@@ -1,0 +1,22 @@
+Colección de discos
+Estás creando una función que facilita el mantenimiento de una colección de álbumes musicales. 
+La colección está organizada como un objeto que contiene varios álbumes, que también son objetos.
+ Cada álbum se representa en la colección con un idnombre de propiedad único. 
+ Dentro de cada objeto de álbum, hay varias propiedades que describen información sobre el álbum. 
+ No todos los álbumes tienen información completa.
+
+La updateRecords función toma 4 argumentos representados por los siguientes parámetros de función:
+
+records- un objeto que contiene varios álbumes individuales
+id- un número que representa un álbum específico en el recordsobjeto
+prop- una cadena que representa el nombre de la propiedad del álbum a actualizar
+value- una cadena que contiene la información utilizada para actualizar la propiedad del álbum
+Complete la función utilizando las reglas a continuación para modificar el objeto pasado a la función.
+
+Su función siempre debe devolver el recordsobjeto completo.
+Si valuees una cadena vacía, elimine la proppropiedad dada del álbum.
+Si propno es tracksy valueno es una cadena vacía, asígnelo valuea ese álbum prop.
+Si propes tracksy valueno es una cadena vacía, pero el álbum no tiene una trackspropiedad, crea una matriz vacía y agrégala value.
+Si prop es tracksy valueno es una cadena vacía, agréguelo valueal final de la tracksmatriz existente del álbum.
+Nota: Se utiliza una copia del recordCollectionobjeto para las pruebas. No se debe modificar directamente recordCollection.
+

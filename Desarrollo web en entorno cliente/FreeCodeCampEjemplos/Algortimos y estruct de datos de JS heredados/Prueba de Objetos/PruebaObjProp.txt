@@ -1,0 +1,13 @@
+Prueba de objetos para propiedades
+Para comprobar si una propiedad existe o no en un objeto determinado, puede utilizar el:
+ .hasOwnProperty()método . someObject.hasOwnProperty(someProperty)devuelve true o false dependiendo 
+ de si la propiedad se encuentra en el objeto o no.
+
+Ejemplo
+
+function checkForProperty(object, property) {
+  return object.hasOwnProperty(property);
+}
+
+checkForProperty({ top: 'hat', bottom: 'pants' }, 'top'); // true
+checkForProperty({ top: 'hat', bottom: 'pants' }, 'middle'); // 

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 🧩 Nivel 1 – Sintaxis básica
+1️⃣ Crea una función flecha llamada saludar que reciba un nombre y devuelva
+"Hola, [nombre]!".
+2️⃣ Crea una función flecha llamada doble que reciba un número y devuelva su doble.
+3️⃣ Crea una función flecha llamada esPar que devuelva true si el número es par y false si no.
+4️⃣ Crea una función flecha llamada sumar que reciba dos números y devuelva la suma.-->
+
+    <script>
+    "use strict";
+//1.  
+let saludar = nombre => `Hola ${nombre}`;
+console.log(saludar("Paco"));
+//2.
+let doble = numero => numero * 2;
+console.log(doble(4));
+//3.
+let esPar = numero => (numero % 2 === 0) ? "Es par" : "Es impar";
+console.log(esPar(5));
+//4.
+let sumar = (num1,num2) => num1 + num2;
+console.log(sumar(5,5));
+    </script>
+
+</body>
+</html>

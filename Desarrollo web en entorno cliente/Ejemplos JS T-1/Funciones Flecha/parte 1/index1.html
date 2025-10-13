@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones flecha</title>
+</head>
+<body>
+    <!--Ejercicio 1 — Sumar dos números :Crea una función flecha que reciba dos números y devuelva su suma.
+Muestra el resultado por consola.-->
+<!--Ejercicio 2 — Saludo personalizado Crea una función flecha que reciba un nombre y devuelva un saludo tipo:-->
+<!--Ejercicio 3 — Número par o impar Crea una función flecha que reciba un número y diga si es par o impar.-->
+<!--Ejercicio 4 — Array y .map()Crea un array con números del 1 al 5.
+Usa .map() con una función flecha para devolver un nuevo array con los números al cuadrado.-->
+
+    <script>
+        "use strict";
+        //Ej.1
+        let suma = (num1,num2) => num1 + num2;
+        console.log(suma(5,5));
+        //Ej.2
+        let saludo = nombre => "Hola " + nombre;
+        console.log(saludo("Paco"));
+        //Ej.3
+        let parImpar = num => num % 2 === 0 ? "Numero par" : "numero impar";
+        console.log(parImpar(6));
+        //Ej.4
+        let array = [1,2,3,4,5];
+        let nuevoArray = array.map(array => Math.pow(array,array)) ;
+        console.log(nuevoArray);
+    </script>
+</body>
+</html>

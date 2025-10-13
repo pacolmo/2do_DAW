@@ -1,0 +1,9 @@
+Búsqueda de perfil
+
+Tenemos una serie de objetos que representan diferentes personas en nuestras listas de contactos.
+Se ha escrito previamente para usted una lookUpProfile función que toma name una propiedad ( ) como argumentos.prop
+La función debe verificar si namees un contacto real firstNamey la propiedad dada ( prop) es una propiedad de ese contacto.
+Si ambos son verdaderos, entonces devuelve el "valor" de esa propiedad.
+Si name no corresponde a ningún contacto entonces devuelve la cadena No such contact.
+Si prop no corresponde a ninguna propiedad válida de un contacto encontrado para coincidir, 
+name entonces devuelve la cadena No such property.

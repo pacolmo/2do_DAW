@@ -1,0 +1,10 @@
+Utilice la recursión para crear un rango de números
+Continuando con el desafío anterior, te brindamos otra oportunidad 
+de crear una función recursiva para resolver un problema.
+
+Hemos definido una función rangeOfNumberscon dos parámetros.
+La función debe devolver un array de enteros que comienza con un número representado
+por el startNum parámetro y termina con un número representado por el endNum parámetro.
+El número inicial siempre será menor o igual que el número final.
+La función debe usar recursividad llamándose a sí misma y no usar bucles de ningún tipo.
+También debería funcionar en casos donde " startNumy " endNumsean iguales.
