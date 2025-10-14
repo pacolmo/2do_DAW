@@ -1,0 +1,65 @@
+levantar un contenedor PHP+Apache con Docker:
+
+Ruta que usarás como carpeta del proyecto:
+
+C:\Users\pakit\Desktop\2do DAW\Desarrollo web en entorno servidor\BLOQUE I. EL LENGUAJE PHP (SINTAXIS)\Ejercicios Sintaxis
+
+abrir cmd y copiar ruta  :  cd "C:\Users\pakit\Desktop\2do DAW\Desarrollo web en entorno servidor\BLOQUE I. EL LENGUAJE PHP (SINTAXIS)\Ejercicios Sintaxis"
+
+Crea un archivo docker-compose.yml dentro de esa carpeta.
+notepad docker-compose.yml
+
+Cuando se abra Notepad, pega exactamente el contenido siguiente y guarda (Archivo → Guardar):
+
+version: "3.8"
+
+services:
+  php-apache:
+    image: php:8.2-apache
+    container_name: php_class
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+    restart: unless-stopped
+
+En la misma carpeta, comprueba que esté el docker-compose.yml y tus archivos PHP (por ejemplo index.php).
+en cmd: dir
+Deberías ver docker-compose.yml y tus .php.
+
+Levanta el servicio con Docker Compose
+docker compose up -d
+
+Si tu versión de Docker requiere docker-compose (con guion), prueba:
+
+docker-compose up -d
+
+Debes ver un contenedor php_class (o con el nombre que pusimos) y el mapeo de puertos 0.0.0.0:8080->80/tcp.
+
+Abre tu navegador y ve a :
+C:\Users\pakit\Desktop\2do DAW\Desarrollo web en entorno servidor\BLOQUE I. EL LENGUAJE PHP (SINTAXIS)\Ejercicios Sintaxis
+
+http://localhost:8080/Ej_7.php
+
+
+Para ver los logs del servidor:
+
+docker compose logs -f
+
+
+Para parar el contenedor:
+
+docker compose down
+
+
+Si cambias de puerto (por ejemplo, 8081), solo modifica en docker-compose.yml:
+
+ports:
+  - "8081:80"
+
+
+y luego:
+
+docker compose up -d
+
+
