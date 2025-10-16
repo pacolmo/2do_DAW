@@ -1,0 +1,29 @@
+Crea un enmascarador de correo electrónico
+En este laboratorio, enmascarará la parte del nombre de usuario de una dirección de correo electrónico con asteriscos. El enmascaramiento es un término que se utiliza para ocultar o reemplazar información confidencial con asteriscos u otros caracteres.
+
+Por ejemplo, si la dirección de correo electrónico era myEmail@email.com, entonces la dirección de correo electrónico enmascarada será m*****l@email.com.
+
+Objetivo: Cumplir las historias de usuario a continuación y lograr aprobar todas las pruebas para completar el laboratorio.
+
+Historias de usuarios:
+
+Crea una función llamada maskEmailque tome emailcomo argumento.
+Dentro de la función, debes enmascarar emaily añadirle el nombre de dominio. Recuerda que puedes usar métodos como slice, repeat, indexOfo even replacepara ayudarte.
+Fuera de la función, declare una variable llamada emailpara almacenar la dirección de correo electrónico que desea enmascarar.
+Llama a la maskEmailfunción con la emailvariable y envía el resultado a la consola.
+maskEmail("apple.pie@example.com")Debería regresar "a*******e@example.com".
+maskEmail("freecodecamp@example.com")Debería regresar "f**********p@example.com".
+maskEmail("info@test.dev")Debería regresar "i**o@test.dev".
+maskEmail("user@domain.org")Debería regresar "u**r@domain.org".
+
+
+Espera :1. Debes definir una función llamada maskEmail.
+Espera :2. La maskEmailfunción debe tomar una cadena emailcomo argumento.
+Espera :3. Fuera de la función, debe tener una emailvariable.
+Espera :4. Debes asignar una dirección de correo electrónico válida a tu emailvariable.
+Espera :5. maskEmail("apple.pie@example.com")deberia regresar "a*******e@example.com".
+Espera :6. maskEmail("freecodecamp@example.com")deberia regresar "f**********p@example.com".
+Espera :7. maskEmail("info@test.dev")deberia regresar "i**o@test.dev".
+Espera :8. maskEmail("user@domain.org")deberia regresar "u**r@domain.org".
+Espera :9. maskEmailDebería producir el resultado correcto.
+Espera :10. Debe registrar la salida de la llamada maskEmailcon emailcomo argumento.
