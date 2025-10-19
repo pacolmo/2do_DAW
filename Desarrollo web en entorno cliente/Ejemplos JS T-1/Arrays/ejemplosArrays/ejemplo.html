@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      "use strict";
+
+function sumInput() {
+  let numeros = [];
+
+  while (true) {
+    let valor = prompt("Ingresa un número (o deja vacío para terminar):");
+
+    // Si se cancela, deja vacío o no es un número, salimos del bucle
+    if (valor === "" || valor === null || !isFinite(valor)) {
+      break;
+    }
+
+    // Convertimos el valor a número y lo añadimos al array
+    numeros.push(+valor);
+  }
+
+  // Calculamos la suma
+  let suma = 0;
+  for (let numero of numeros) {
+    suma += numero;
+  }
+
+  return suma;
+}
+
+console.log(sumInput());
+
+
+    </script>
+</body>
+</html>

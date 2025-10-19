@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <script>
+let cantidad = prompt("Ingresa los elementos");
+ let elementos = [];
+ 
+ for (let i = 0; i < cantidad; i++) {
+    let valores= prompt(`elemento ${i + 1}: `);
+    elementos.push(+valores);
+ }
+ console.log("Elementos en consola" , elementos);
+
+ for (let i = 0; i < elementos.length; i++) {
+    console.log(elementos[i]);
+    
+ }
+ </script>
+</body>
+</html>
