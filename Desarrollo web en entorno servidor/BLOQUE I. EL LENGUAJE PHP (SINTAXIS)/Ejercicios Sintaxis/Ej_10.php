@@ -33,26 +33,23 @@
             array("comunidad" => "País Vasco", "provincias" => array("Bilbao" => 124, "San Sebastián" => 8124, "Vitoria" => 259)),
             array("comunidad" => "La Rioja", "provincias" => array("Logroño" => 1081)));
 
-             foreach ($comunidades as  $region) {
-                echo "<br>" . $region["comunidad"];
-             
-                echo "<br>";
-            $provincias = $region["provincias"];
-                echo "<div style = 'background-color:blue; width= 200px'>$region</div>";
-                
+            
+               foreach ($comunidades as $region) {
+                $totalRayosComunidad = 0;
+                 echo "<br><b>" . $region["comunidad"] . "</b><br>";
+
                 foreach ($region["provincias"] as $ciudad => $rayos) {
+                    $totalRayosComunidad += $rayos;
 
-                    if($rayos < 500){
-                        print_r("<div style ='background-color:red;width=400px'>$ciudad -> $rayos</div>");
-                    }else if($rayos > 500){
-                        echo "<div style = 'background-color:green;width = 400px'>$ciudad ->$rayos</div>";
-                    }
-
-                }
+                    if ($rayos < 500) {
+                     echo "<div style='color:green;'>$ciudad → $rayos</div>"; //para la flecha pulsar alt 26
+                    } else {
+                        echo "<div style='color:red;'>$ciudad → $rayos</div>";
+                  }
+              }
+                        echo "<i>Casos totales en " . $region["comunidad"] . " → $totalRayosComunidad</i><br><br>";
             }
-           
-            ?>
-    
+    ?>
 </body>
 </html>
 
