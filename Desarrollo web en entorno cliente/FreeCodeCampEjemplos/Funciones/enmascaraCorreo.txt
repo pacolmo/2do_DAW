@@ -7,10 +7,11 @@ Objetivo: Cumplir las historias de usuario a continuación y lograr aprobar toda
 
 Historias de usuarios:
 
-Crea una función llamada maskEmailque tome emailcomo argumento.
-Dentro de la función, debes enmascarar emaily añadirle el nombre de dominio. Recuerda que puedes usar métodos como slice, repeat, indexOfo even replacepara ayudarte.
-Fuera de la función, declare una variable llamada emailpara almacenar la dirección de correo electrónico que desea enmascarar.
-Llama a la maskEmailfunción con la emailvariable y envía el resultado a la consola.
+Crea una función llamada maskEmail que tome email como argumento.
+Dentro de la función, debes enmascarar email y añadirle el nombre de dominio. 
+Recuerda que puedes usar métodos como slice, repeat, indexOf o even replace para ayudarte.
+Fuera de la función, declare una variable llamada email para almacenar la dirección de correo electrónico que desea enmascarar.
+Llama a la maskEmailfunción con la email variable y envía el resultado a la consola.
 maskEmail("apple.pie@example.com")Debería regresar "a*******e@example.com".
 maskEmail("freecodecamp@example.com")Debería regresar "f**********p@example.com".
 maskEmail("info@test.dev")Debería regresar "i**o@test.dev".

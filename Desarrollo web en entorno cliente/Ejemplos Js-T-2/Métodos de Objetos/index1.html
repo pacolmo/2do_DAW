@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej-1</title>
+</head>
+<body>
+    <script>
+        /*EJERCICIO: Crea un objeto llamado tvSamsung con las propiedades:
+        nombre (“TV Samsung 42”), categoria (“Televisores”), unidades (4), precio (345.95) 
+        y con un método llamado importe que devuelve el valor total de las unidades (nº de unidades * precio)*/
+
+        let tvSamsung = {
+            categoria:"televisores",
+            unidades : 4,
+            precio: 345.95,
+             importe : function unidades() {
+                return this.unidades * this.precio;
+            }
+        };
+        console.log(tvSamsung.importe());
+
+    </script>
+</body>
+</html>
