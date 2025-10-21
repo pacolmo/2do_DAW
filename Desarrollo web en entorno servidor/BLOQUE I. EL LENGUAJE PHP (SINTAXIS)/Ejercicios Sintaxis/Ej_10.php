@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ej-10.PROVINCIAS RAYOS</title>
+    <title>Ej-10</title>
 </head>
+<style>
+    
+    </style>
 <body>
     <?php
         /*Dado el siguiente array se tratará de visualizar todas las provincias (falta algunas), 
@@ -30,27 +33,23 @@
             array("comunidad" => "País Vasco", "provincias" => array("Bilbao" => 124, "San Sebastián" => 8124, "Vitoria" => 259)),
             array("comunidad" => "La Rioja", "provincias" => array("Logroño" => 1081)));
 
-           foreach ($comunidades as $comunidad) {
-            $totalRayos = 0; 
-             echo "<b>" . $comunidad["comunidad"] . "</b>" . "<br>";
-             
-             $provincias = $comunidad["provincias"];
+            
+               foreach ($comunidades as $region) {
+                $totalRayosComunidad = 0;
+                 echo "<br><b>" . $region["comunidad"] . "</b><br>";
 
-             foreach ($provincias as $ciudad => $rayos) {
-                $totalRayos += $rayos;
+                foreach ($region["provincias"] as $ciudad => $rayos) {
+                    $totalRayosComunidad += $rayos;
 
-                echo " $ciudad → $rayos <br>";
-                if ($rayos < 500) {
-                    echo "<div style = 'color: green'>$ciudad → $rayos</div>";
-                }else{
-                    echo "<div style = 'color: red'>$ciudad → $rayos</div>";
-                }
-                
-                
-             }
-             echo "<br>casos totales en  " . $comunidad["comunidad"] . " : " . $totalRayos;
-             echo "<hr>";
-           }
+                    if ($rayos < 500) {
+                     echo "<div style='color:green;'>$ciudad → $rayos</div>"; //para la flecha pulsar alt 26
+                    } else {
+                        echo "<div style='color:red;'>$ciudad → $rayos</div>";
+                  }
+              }
+                        echo "<i>Casos totales en " . $region["comunidad"] . " → $totalRayosComunidad</i><br><br>";
+            }
     ?>
 </body>
 </html>
+
