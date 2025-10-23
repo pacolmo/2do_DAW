@@ -27,16 +27,19 @@ array("continente"=>"Oceanía", "paises"=>array(array("pais"=>"Australia", "capi
 );
 
     foreach ($continentes as $continente) {
-        echo $continente["continente"]. "<br>";
-
-        $paises = $continente["paises"];
-
-        foreach ($paises as $paisArray) {
-           echo "$pais : " . $paisArray["pais"] . "Capital → " . $paisArray["capital"];
-            echo "<img src= " . $paisArray["bandera"] . "' alt='" . $paisArray["pais"] . "' width='50'><br><br>";
-
+        echo "<table>";
+        echo $continente["continente"];
+        echo "<tr><th>Pais</th><th>Capital</th><th>Bandera</th></tr>";
+        foreach ($continente["paises"] as $pais) {
+            echo "<tr>";
+            echo "<td style = 'border:solid black 1.5px;'>". $pais["pais"] . "</td>";
+            echo "<td style = 'border:solid black 1.5px;'>". $pais["capital"] . "</td>";
+            echo "<td style = 'border:solid black 1.5px;'>" . "<img src= '" . $pais["bandera"]  . "'></td>";
+            echo "</tr>";
         }
+        echo "</table>";
     }
+
 
     ?>
 </body>

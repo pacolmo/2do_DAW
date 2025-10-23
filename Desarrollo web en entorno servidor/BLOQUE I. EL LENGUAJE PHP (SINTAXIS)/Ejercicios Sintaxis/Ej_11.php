@@ -4,11 +4,20 @@
     <meta charset="UTF-8">
     <title>Continentes y Países</title>
     <style>
-        table { border-collapse: collapse; width: 60%; margin-bottom: 20px; }
-        th, td { border: 1px solid #000; padding: 8px; text-align: left; }
-        th { background-color: #4CAF50; color: white; }
-        caption { font-weight: bold; font-size: 1.2em; margin-bottom: 5px; }
-        img { width: 50px; height: auto; }
+        table { width: 200px; 
+                margin-bottom: 20px; 
+            }
+        th, td { border: 1px solid #000;
+             padding: 8px; 
+             text-align: left; 
+            }
+        th { background-color:white; 
+             color: black; 
+        }
+        
+        img { width: 50px; 
+              height: auto; 
+        }
     </style>
 </head>
 <body>
@@ -38,7 +47,7 @@ $continentes = array(
 );
 foreach ($continentes as $continente) {
     echo "<table>";
-    echo "<caption>" . $continente["continente"] . "</caption>";
+    echo  $continente["continente"];
     echo "<tr><th>País</th><th>Capital</th><th>Bandera</th></tr>";
 
     foreach ($continente["paises"] as $pais) {
