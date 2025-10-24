@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*Agregue la propiedad numLegsy los dos métodos eat()y describe()al prototype de 
+        Dog estableciendo el prototype en un nuevo objeto. */
+
+        function Dog(name) {
+        this.name = name;
+        }
+
+        Dog.prototype = {
+        // Only change code below this line
+        numLegs:4,
+        eat: function(){
+            console.log("ñam,ñam");
+        },
+        describe: function(){
+            console.log("El perro come");
+        }
+        };
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /*Añade todas las propiedades propias de beaglea la matriz ownProps.
+        Añade todas las prototypepropiedades de Doga la matriz prototypeProps.*/
+        function Dog(name) {
+  this.name = name;
+}
+
+Dog.prototype.numLegs = 4;
+
+let beagle = new Dog("Snoopy");
+
+let ownProps = [];
+let prototypeProps = [];
+
+// Only change code below this line
+
+for(let property in beagle){
+
+ if(beagle.hasOwnProperty(property)){
+   ownProps.push(property);
+}else{
+  prototypeProps.push(property);
+}
+}
+console.log(ownProps);
+console.log(prototypeProps);
+    </script>
+</body>
+</html>

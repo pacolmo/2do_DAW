@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*Escriba una joinDogFraternityfunción que tome un candidateparámetro y, usando la constructor propiedad,
+         devuelva truesi el candidato es un Dog, de lo contrario devuelva false. */
+
+                        function Dog(name) {
+                this.name = name;
+                }
+
+                // Only change code below this line
+                function joinDogFraternity(candidate) {
+                if(candidate.constructor === Dog){
+                    return true;
+                }else{
+                    return false;
+                }
+                }
+    </script>
+</body>
+</html>
