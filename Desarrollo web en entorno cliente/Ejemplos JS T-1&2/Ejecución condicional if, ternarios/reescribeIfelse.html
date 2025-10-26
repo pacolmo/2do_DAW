@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            /*Reescriba el 'if..else' con '?'
+            Reescriba el if..else utilizando operadores ternarios múltiples'?'.
+
+            Para mejor legibilidad, se recomienda dividirlo en múltiples lineas de código.
+
+            let message;
+
+            if (login == 'Empleado') {
+            message = 'Hola';
+            } else if (login == 'Director') {
+            message = 'Felicidades';
+            } else if (login == '') {
+            message = 'Sin sesión';
+            } else {
+            message = '';
+            }  */
+
+        
+        let login = prompt("Escribe la palabra: ");
+         let message = (login == 'Empleado') ? 'Hola' :
+          (login == 'Director') ? 'Felicidades' : 
+          (login == '') ? 'Sin sesion' : '';
+
+          console.log(message);
+
+    </script>
+</body>
+</html>
