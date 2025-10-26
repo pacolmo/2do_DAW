@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*EJERCICIO: Ejercicio 1: El Dilema del Apodo
+        Analiza el siguiente bloque de código.
+        ¿Qué mostrarán las dos líneas console.log() al final? */
+        //Variable Primitiva
+        let nombre = "Ana";
+        let apodo = nombre;
+
+        apodo = "Anita";
+
+        // Variable de Objeto
+        let persona1 = { nombre: "Ana" };
+        let persona2 = persona1;
+
+        persona2.nombre = "Anita";
+
+        // Resultados
+        console.log(nombre);  
+        console.log(persona1);
+
+    </script>
+</body>
+</html>

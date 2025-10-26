@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*Ejercicio 1: Copia de Primitivos (Valor)*/
+        //Analiza el siguiente bloque de código. Escribe cuáles crees que serán los valores finales de las variables a, b, x e y que se mostrarán en la consola.
+
+// --- Bloque 1: Números ---
+let a = 100;
+let b = a; // Copia de 'a'
+
+b = 50; // Modificación de 'b'
+
+// --- Bloque 2: Texto (Strings) ---
+let x = "Hola";
+let y = x; // Copia de 'x'
+
+x = "Adiós"; // Modificación de 'x'
+
+// --- Resultados ---
+console.log("Valor final de a:", a);// 100
+console.log("Valor final de b:", b);// 50
+console.log("Valor final de x:", x);//Adios
+console.log("Valor final de y:", y);//Hola
+
+//Ejercio 2
+/*Ejercicio 2: Copia por Referencia (El "Error" Común)
+Analiza el siguiente código. 
+Ambas variables (coche2 y numeros2) se crean asignándoles la variable original.
+¿Qué valores crees que mostrarán los cuatro console.log() al final?*/
+
+// --- Bloque 1: Objetos ---
+let coche1 = {
+    marca: 'Toyota',
+    color: 'Rojo'
+};
+
+// Se "copia" el coche1 en coche2
+let coche2 = coche1;
+
+// Modificamos el color usando la variable 'coche2'
+coche2.color = 'Azul';
+
+// --- Bloque 2: Arrays ---
+let numeros1 = [10, 20, 30];
+
+// Se "copia" el array numeros1 en numeros2
+let numeros2 = numeros1;
+
+// Modificamos el primer número usando la variable 'numeros2'
+numeros2[0] = 99;
+
+// --- Resultados ---
+console.log("Color del coche1:", coche1.color); //Azul
+console.log("Color del coche2:", coche2.color); //Azul
+
+console.log("Primer número de numeros1:", numeros1[0]);//99
+console.log("Primer número de numeros2:", numeros2[0]);//99
+
+/*Ejercicio 3: 
+Copia Superficial (Shallow Copy) 🏠➡️🏠
+Ahora que hemos visto el "problema" (modificar el original sin querer), vamos a usar la "solución" 
+para objetos simples: el operador de propagación (...).
+Analiza el siguiente código. Es idéntico al anterior, pero fíjate bien en cómo se crean coche2 y numeros2.
+¿Qué valores mostrarán los cuatro console.log() esta vez? */
+
+// --- Bloque 1: Objetos con (...) ---
+    coche1 = {
+    marca: 'Toyota',
+    color: 'Rojo'
+};
+
+// Se CREA UN NUEVO objeto coche2 copiando las propiedades de coche1
+ coche2 = { ...coche1 }; // <-- ¡LA MAGIA OCURRE AQUÍ!
+
+// Modificamos el color usando la variable 'coche2'
+coche2.color = 'Azul';
+
+// --- Bloque 2: Arrays con (...) ---
+ numeros1 = [10, 20, 30];
+
+// Se CREA UN NUEVO array numeros2 copiando los elementos de numeros1
+ numeros2 = [ ...numeros1 ]; // <-- ¡Y AQUÍ!
+
+// Modificamos el primer número usando la variable 'numeros2'
+numeros2[0] = 99;
+
+// --- Resultados ---
+console.log("Color del coche1:", coche1.color);//Rojo
+console.log("Color del coche2:", coche2.color);//Azul
+
+console.log("Primer número de numeros1:", numeros1[0]);//10
+console.log("Primer número de numeros2:", numeros2[0]);//99
+
+//Ejercicio 4 El Límite de la Copia Superficial (Objetos Anidados)
+    /*Aquí es donde se complica. Hemos usado ... para clonar la "casa", 
+    pero ¿qué pasa con el "garaje" (el objeto dentro de la casa)?
+    Recuerda: la copia superficial (...) solo clona el primer nivel. 
+    Los objetos internos siguen siendo referencias (copia la dirección del garaje 🏠).
+    Analiza el código y dime qué mostrarán los cuatro console.log() finales. */
+
+    // --- Bloque Único: Objeto con objeto anidado ---
+        let casa1 = {
+            colorPared: 'Blanca',
+            garaje: { // <-- Objeto anidado
+                puerta: 'Manual'
+            }
+        };
+
+        // Creamos un clon superficial con '...'
+        let casa2 = { ...casa1 };
+
+        // --- Modificaciones ---
+
+        // 1. Cambiamos el color de la pared de la casa 2
+        casa2.colorPared = 'Gris';
+
+        // 2. Cambiamos la puerta del garaje usando la casa 2
+        casa2.garaje.puerta = 'Automática'; // <-- ¡Cuidado aquí!
+
+        // --- Resultados ---
+        console.log("Pared de casa1:", casa1.colorPared); //Blanca
+        console.log("Pared de casa2:", casa2.colorPared); //Gris
+
+        console.log("Garaje de casa1:", casa1.garaje.puerta);//automatica
+        console.log("Garaje de casa2:", casa2.garaje.puerta);//automatica
+        //se queda automatica porque cambiamos el valor de la asignacion 
+
+        //💻 Ejercicio 5: Copia Profunda (Deep Copy) 🏠G➡️🏠G
+        /*Ahora vamos a solucionar ese último problema.
+        Necesitamos clonar la casa Y el garaje.
+        Usaremos el método moderno: structuredClone().
+        Esta función sí clona todo, sin importar cuántos objetos haya anidados.
+        Analiza este código (es el mismo que el anterior, pero mira cómo creamos casa2) 
+        y dime los resultados:*/
+            // --- Bloque Único: Objeto con objeto anidado ---
+                casa1 = {
+                colorPared: 'Blanca',
+                garaje: { // <-- Objeto anidado
+                    puerta: 'Manual'
+                }
+            };
+
+            // Creamos un CLON PROFUNDO con 'structuredClone'
+            casa2 = structuredClone(casa1); // <-- ¡LA SOLUCIÓN!
+
+            // --- Modificaciones ---
+
+            // 1. Cambiamos el color de la pared de la casa 2
+            casa2.colorPared = 'Gris';
+
+            // 2. Cambiamos la puerta del garaje usando la casa 2
+            casa2.garaje.puerta = 'Automática';
+
+            // --- Resultados ---
+            console.log("Pared de casa1:", casa1.colorPared);//blanca
+            console.log("Pared de casa2:", casa2.colorPared);//gris
+
+            console.log("Garaje de casa1:", casa1.garaje.puerta);//Manual
+            console.log("Garaje de casa2:", casa2.garaje.puerta);//automatica
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

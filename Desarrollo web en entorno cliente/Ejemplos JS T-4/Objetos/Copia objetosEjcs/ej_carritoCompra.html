@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de la compra</title>
+</head>
+<body>
+    <script>
+        /*Estás programando un e-commerce. Un usuario tiene un carrito de la compra. 
+         Quieres crear una función aplicarDescuento(carrito, porcentaje) 
+        que devuelva un NUEVO carrito con el precio de cada producto reducido en ese porcentaje.
+        La Regla de Negocio (El Desafío): El carrito original NO DEBE ser modificado. 
+        Necesitamos el carrito original intacto por si el usuario decide "cancelar" el cupón de descuento.*/
+
+        // --- 1. DATOS INICIALES ---
+
+// El carrito original del usuario
+const carritoOriginal = [
+    { id: 1, nombre: 'Zapatillas', precio: 80.00 },
+    { id: 2, nombre: 'Camiseta', precio: 25.50 },
+    { id: 3, nombre: 'Gorra', precio: 15.00 }
+];
+
+const DESCUENTO_A_APLICAR = 10; // Un 10% de descuento
+
+// --- 2. FUNCIÓN CORREGIDA ---
+
+function aplicarDescuento(carrito, porcentaje) {
+    
+    // CORRECCIÓN 1: Clonamos el 'carrito' que entra como ARGUMENTO.
+    const nuevoCarrito = structuredClone(carrito);
+    
+    // Calculamos el factor una sola vez fuera del bucle
+    const factorDescuento = 1 - (porcentaje / 100);
+
+    // 2. Iteramos sobre la COPIA (usamos 'producto' para más claridad)
+    nuevoCarrito.forEach(producto => {
+        
+        // CORRECCIÓN 2: Calculamos el nuevo precio usando 'producto.precio'
+        const precioNuevo = producto.precio * factorDescuento;
+
+        // CORRECCIÓN 3: ASIGNAMOS el nuevo precio al producto de la COPIA
+        // (Añadimos un redondeo, buena práctica con dinero)
+        producto.precio = Math.round(precioNuevo * 100) / 100;
+    });
+
+    // 5. Devolvemos la copia modificada
+    return nuevoCarrito;
+}
+
+// --- 3. EJECUCIÓN Y PRUEBA ---
+
+// Llamamos a la función con los datos originales
+const carritoConDescuento = aplicarDescuento(carritoOriginal, DESCUENTO_A_APLICAR);
+
+console.log("--- Carrito Original (Debe estar intacto) ---");
+// Usamos JSON.stringify para que se vea bien en la consola
+console.log(JSON.stringify(carritoOriginal, null, 2));
+
+console.log("--- Carrito con Descuento (Debe tener precios nuevos) ---");
+console.log(JSON.stringify(carritoConDescuento, null, 2));
+
+// Comprobación final
+const precioOriginal = carritoOriginal[0].precio; // 80.00
+const precioDescuento = carritoConDescuento[0].precio; // 72.00
+
+console.log('-------------------------------------------');
+if (precioOriginal === precioDescuento) {
+    console.error("⛔ ¡ERROR! Has modificado el carrito original.");
+} else {
+    console.log(`✅ ¡ÉXITO! El original (${precioOriginal}€) está intacto y el nuevo tiene descuento (${precioDescuento}€).`);
+}
+
+
+    </script>
+</body>
+</html>

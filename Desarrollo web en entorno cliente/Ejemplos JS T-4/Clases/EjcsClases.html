@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*EJERCICIO: Crea una clase Productos con las propiedades name, category, 
+    units y price y los métodos total que devuelve el importe del producto 
+    y getInfo que devolverá: ‘Name (category): 
+    units uds x price € = total €’. Crea 3 productos diferentes.*/
+
+    
+        class Productos {
+            constructor(name, category,units,price) {
+            this.name = name;
+            this.category = category;
+            this.units = units;
+            this.price = price;
+    }
+        total(){
+            return Math.round((this.units * this.price) * 100) / 100;
+
+        }
+        getInfo() {
+         return 'Nombre :' + this.name + '\nCategoria: ' + this.category  + '\nunidades ' + this.units 
+         + this.price  + ' \nprecio' + ' = ' + this.total().toFixed(2) + ' €';
+    }
+
+}
+        let producto1 = new Productos('Uno','Cartas', 5,10.0);
+        let producto2 = new Productos('Poker','fichas', 4,20.0);
+        let producto3 = new Productos('Parchis','Cubiletes', 4,12.0);
+
+        console.log(producto1.getInfo());
+        console.log(producto2.getInfo());
+        console.log(producto3.getInfo());
+
+    </script>
+</body>
+</html>

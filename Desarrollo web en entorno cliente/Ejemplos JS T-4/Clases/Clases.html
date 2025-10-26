@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Clases en JS
+        //a POO en Javascript es similar a como se hace en otros lenguajes, con clases, herencia, …
+
+        class Alumno {
+            constructor(nombre, apellidos, edad) {
+            this.nombre = nombre
+            this.apellidos = apellidos
+            this.edad = edad
+    }
+        getInfo() {
+         return 'El alumno ' + this.nombre + ' ' + this.apellidos + ' tiene ' + this.edad + ' años'
+    }
+}
+
+        let alumno1 = new Alumno('Carlos', 'Pérez Ortiz', 19);
+        console.log(alumno1.getInfo());   // imprime 'El alumno Carlos Pérez Ortíz tiene 19 años'
+
+    //NOTA: en las clases no es necesario poner 'use strict' porque laas clases lo tienen por defecto
+    
+    //Herencia
+    class AlumnInf extends Alumno{
+     constructor(nombre, apellidos, edad, ciclo) {
+        super(nombre, apellidos, edad);
+        this.ciclo = ciclo
+    }
+    getInfo() {
+        return super.getInfo() + ' y estudia el Grado ' + (this.getGradoMedio ? 'Medio' : 'Superior') + ' de ' + this.ciclo
+    }
+    getGradoMedio() {
+        if (this.ciclo.toUpperCase === 'SMX')
+        return true
+        return false
+    }
+    }
+
+    let cpo = new AlumnInf('Carlos', 'Pérez Ortiz', 19, 'DAW')
+     console.log(cpo.getInfo());
+
+    /*EJERCICIO: crea una clase Televisores que hereda de Productos y que tiene una nueva propiedad llamada tamaño. 
+     El método getInfo mostrará el tamaño junto al nombre*/
+
+
+
+
+
+     //Métodos y propiedades estáticas
+     //Estos métodos se llaman directamente utilizando el nombre de la clase y no tienen acceso al objeto this (ya que no hay objeto instanciado).
+    "use strict";
+     class User {
+        
+        static getRoles() {
+        return ["user", "guest", "admin"]
+    }
+}
+
+console.log(User.getRoles()); // ["user", "guest", "admin"]
+let user = new User("john");
+console.log(user.getRoles());
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
