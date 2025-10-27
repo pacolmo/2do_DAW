@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mapa + Ventana Controlable</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f0f2f5;
+      text-align: center;
+    }
+    h1 {
+      background: #0078d7;
+      color: white;
+      padding: 1rem;
+      margin: -20px -20px 20px -20px;
+    }
+    iframe {
+      border: none;
+      width: 90%;
+      height: 400px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      margin-bottom: 20px;
+    }
+    button {
+      background: #0078d7;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #005fa3;
+    }
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mapa con control de ventana emergente</h1>
+
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.002262736098!2d2.173403915424991!3d41.38506397926395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2f3f7d2b9b9%3A0xf22a9df5b6c1b8b7!2sBarcelona!5e0!3m2!1ses!2ses!4v1672932829298!5m2!1ses!2ses"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+
+  <div class="controls">
+    <button onclick="crearVentana()">Abrir ventana</button>
+    <button onclick="escribirVentana()">Escribir</button>
+    <button onclick="moverVentana('arriba')">⬆️ Arriba</button>
+    <button onclick="moverVentana('abajo')">⬇️ Abajo</button>
+    <button onclick="moverVentana('izquierda')">⬅️ Izquierda</button>
+    <button onclick="moverVentana('derecha')">➡️ Derecha</button>
+    <button onclick="cerrarVentana()">❌ Cerrar ventana</button>
+  </div>
+
+  <script>
+    let nuevaVentana = null;
+    let posX = 100; // posición inicial
+    let posY = 100;
+
+    function crearVentana() {
+      // Crea una nueva ventana de 600x400 en posición (100,100)
+      nuevaVentana = window.open("", "miVentana", `width=600,height=400,left=${posX},top=${posY}`);
+      if (nuevaVentana) {
+        nuevaVentana.document.write("<h2>Ventana creada correctamente</h2>");
+        nuevaVentana.document.title = "Ventana Nueva";
+      } else {
+        alert("Tu navegador bloqueó la ventana emergente. Permítela para probar.");
+      }
+    }
+
+    function escribirVentana() {
+      if (nuevaVentana && !nuevaVentana.closed) {
+        nuevaVentana.document.body.innerHTML += "<p>Texto añadido desde la ventana principal.</p>";
+      } else {
+        alert("Primero crea la ventana antes de escribir en ella.");
+      }
+    }
+
+    function moverVentana(direccion) {
+      if (nuevaVentana && !nuevaVentana.closed) {
+        switch (direccion) {
+          case 'arriba': posY -= 20; break;
+          case 'abajo': posY += 20; break;
+          case 'izquierda': posX -= 20; break;
+          case 'derecha': posX += 20; break;
+        }
+        nuevaVentana.moveTo(posX, posY);
+      } else {
+        alert("Primero crea la ventana antes de moverla.");
+      }
+    }
+
+    function cerrarVentana() {
+      if (nuevaVentana && !nuevaVentana.closed) {
+        nuevaVentana.close();
+        alert("Ventana cerrada.");
+      } else {
+        alert("La ventana ya está cerrada o no se ha creado.");
+      }
+    }
+  </script>
+</body>
+</html>

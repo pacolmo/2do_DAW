@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       let persona ={
+        nombre: "Paco",
+        edad: 36,
+        ciudad: "Valencia"
+       }
+       let {nombre: n, ciudad :c} = persona;
+       console.log(n);
+       console.log(c);
+
+       const o = { p: 42, q: true, a: { r: 20, s: 'abc' } };
+
+       let {a} = 0;
+       let {a : {r:R}} = 0;
+       console.log(a,R);
+
+    </script>
+</body>
+</html>
