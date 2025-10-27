@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      function maskEmail(email){
+
+            let indice = email.indexOf('@');
+            let nombreUsuario = email.slice(0,indice);
+            let dominio = email.slice(indice);
+            let primerCar =nombreUsuario.charAt(0);
+            let ultimoCar =nombreUsuario.charAt(nombreUsuario.length -1);
+            let longitudMascara = nombreUsuario.length -2;
+            let mascaraAsteriscos = '*'.repeat(longitudMascara);
+
+            return primerCar + mascaraAsteriscos + ultimoCar + dominio;
+}
+    let email = "fraolmseg@gmail.com";
+    console.log(maskEmail(email));
+    </script>
+</body>
+</html>

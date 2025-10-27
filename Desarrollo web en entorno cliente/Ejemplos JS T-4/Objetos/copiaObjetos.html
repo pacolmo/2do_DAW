@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copia Objetost</title>
+</head>
+<body>
+    <script>
+        //Copia Objetos
+
+        //Paso 1: Copiar Primitivos (Copiar la Caja 📦)
+
+        // Tienes una caja 'a' con el número 10
+        let a = 10;
+        // Creas una caja NUEVA 'b' y copias el valor de 'a'
+        let b = a;
+        // Ahora tienes dos cajas separadas, ambas con un 10
+        // Si cambias el valor de la caja 'b'
+        b = 20;
+        // La caja 'a' no se entera. Sigue valiendo 10.
+        console.log(a); // Muestra 10
+        console.log(b); // Muestra 20
+
+        //Conclusión: Con los primitivos, b = a crea un clon independiente.
+
+        //Paso 2: Copiar Objetos (Copiar la Dirección 🏠)
+
+        /*Aquí está la trampa. Cuando copias un objeto, no estás copiando la casa,
+        estás copiando la dirección que apunta a una única casa.*/
+
+        // Creas un objeto. Piensa en esto como construir una casa en la dirección "Memoria 123"
+        let coche1 = { color: 'Rojo' };
+
+        // Creas 'coche2' y le asignas 'coche1'.
+        // NO estás construyendo una casa nueva.
+        // Estás copiando la dirección "Memoria 123" en la variable 'coche2'.
+
+        let coche2 = coche1;
+        // Ahora, 'coche1' y 'coche2' apuntan EXACTAMENTE a la misma casa.
+        // Si vas a la casa usando la dirección 'coche2' y pintas la puerta de azul...
+        coche2.color = 'Azul';
+
+        // ...cuando vayas a la casa usando la dirección 'coche1', ¡la puerta también será azul!
+        // ¡Porque ES LA MISMA CASA!
+        console.log(coche1.color); // Muestra 'Azul'
+        console.log(coche2.color); // Muestra 'Azul'
+
+        //Conclusión: Con los objetos, b = a no crea un clon. Ambas variables controlan el mismo objeto original.
+        
+        //Paso 3: La Copia Superficial (Shallow Copy)
+
+        /*Método 1: Operador de Propagación ... (El más moderno y fácil)
+        Piensa en ... como "saca todo lo de dentro de esta casa y 
+        ponlo en una casa nueva".*/
+
+        coche1 = { color: 'Rojo', ruedas: 4 };
+
+        // Sintaxis: "Crea un objeto nuevo {} y propaga (...) todo lo de coche1 dentro"
+        coche2 = { ...coche1 }; // <-- ¡Esta es la copia!
+
+        // Ahora 'coche2' es una casa NUEVA, construida igual que la primera.
+        // Si pintamos la puerta de 'coche2'
+        coche2.color = 'Azul';
+
+        // La casa original 'coche1' no cambia
+        console.log(coche1.color); // Muestra 'Rojo'
+        console.log(coche2.color); // Muestra 'Azul'
+
+        /*Método 2: Object.assign() (El clásico)
+
+        Funciona igual: Object.assign(A, B) significa "copia todo de B dentro de A".
+        Si A es un objeto vacío {}, estás creando una copia nueva.*/
+        coche1 = { color: 'Rojo' };
+
+        // Sintaxis: "Copia todo de coche1 dentro de un objeto nuevo {}"
+        coche2 = Object.assign({}, coche1);
+
+        coche2.color = 'Azul';
+        console.log(coche1.color); // Muestra 'Rojo'
+
+        //Paso 4: El Problema de la Copia Superficial (Objetos Anidados)
+        //¿Qué pasa si nuestra casa tiene un garaje, que es otro objeto?
+
+            let casa1 = {
+            color: 'Blanca',
+            garaje: { // <-- Objeto anidado
+                puerta: 'Manual'
+            }
+            };
+            //Si usamos la copia superficial (... o Object.assign):
+
+            let casa2 = { ...casa1 };
+
+            /*Lo que JavaScript hace es:
+            Copia color: 'Blanca'. (Crea una "caja" nueva 📦).
+            Copia garaje: (Copia la "dirección" 🏠 del garaje).
+            ¡El clon (casa2) es una casa nueva, pero apunta al mismo garaje que casa1!*/
+
+            // Cambiamos el color de la casa 2. No afecta a la casa 1. (Bien)
+            casa2.color = 'Gris';
+             console.log(casa1.color); // 'Blanca'
+
+            // Cambiamos la puerta del garaje usando la casa 2. (¡Problema!)
+            casa2.garaje.puerta = 'Automática';
+
+            // El garaje de la casa 1 también ha cambiado. ¡Porque es el mismo garaje!
+            console.log(casa1.garaje.puerta); // 'Automática'*/
+
+            /*Paso 5: La Copia Profunda (Deep Copy) - La Solución Real
+            Necesitamos una forma de clonar la casa, el garaje, y todo lo que haya dentro, sin copiar ninguna "dirección" antigua.
+
+            Método 1: structuredClone() (La forma moderna y correcta)
+
+            Esta función está diseñada exactamente para esto. Clona todo, sin importar qué tan profundo sea.*/
+
+            casa1 = {
+                color: 'Blanca',
+                garaje: {
+                puerta: 'Manual'
+                }
+              };
+
+            casa2 = structuredClone(casa1); // <-- ¡Clonación profunda!
+
+            // Cambiamos el garaje de la casa 2
+            casa2.garaje.puerta = 'Automática';
+            // La casa 1 permanece intacta
+            console.log(casa1.color); // 'Blanca'
+            console.log(casa1.garaje.puerta); // 'Manual'
+            // La casa 2 tiene sus propios cambios
+            console.log(casa2.color); // 'Blanca'
+            console.log(casa2.garaje.puerta); // 'Automática'
+
+            /*Método 2: El truco JSON (El método antiguo)
+            Antes de structuredClone, se usaba este truco:
+            JSON.stringify(objeto): Convierte el objeto entero a un texto (string).
+            JSON.parse(texto): Crea un objeto totalmente nuevo a partir de ese texto.*/
+
+            casa1 = { color: 'Blanca', garaje: { puerta: 'Manual' } };
+            let textoDeLaCasa = JSON.stringify(casa1);
+            // textoDeLaCasa es '{"color":"Blanca","garaje":{"puerta":"Manual"}}'
+
+             casa2 = JSON.parse(textoDeLaCasa); // <-- Clonación profunda
+             
+            //Funciona igual que structuredClone para la mayoría de los casos,
+            //pero es más lento y falla con cosas complejas (como Fechas o funciones).
+              console.log(textoDeLaCasa);
+
+              /*Resumen Rápido
+                Primitivos (números, texto): Se copian por valor (clones independientes).
+                Objetos/Arrays: Se copian por referencia (dos variables apuntan a un mismo objeto).
+                Copia Superficial (...): Clona el objeto, pero no los objetos dentro de él.
+                Copia Profunda (structuredClone()): Clona todo. Es la que casi siempre quieres usar para evitar sorpresas.*/
+
+    </script>
+</body>
+</html>

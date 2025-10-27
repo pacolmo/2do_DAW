@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos</title>
+</head>
+<body>
+    <script>
+        //Creando un literal object (es la forma recomendada) el ejemplo anterior sería:
+        const alumno = {
+            nombre: 'Carlos',
+            apellidos: 'Pérez Ortiz',
+            edad: 19,
+        };
+        console.log(alumno);
+        //acceder a sus propiedades con .  o []
+        console.log(alumno.nombre);
+        console.log(alumno['nombre']);
+
+        //operador de encadenamiento opcional ?. para evitar tener que comprobar si es un objeto
+        console.log(alumno.ciclo?.descrip);
+
+        //Podremos recorrer las propiedades de un objecto con for..in:
+
+        for (let prop in alumno) {
+         console.log(prop + ': ' + alumno[prop])
+        }
+
+        //Métodos de un objeto
+        //Una propiedad de un objeto puede ser una función:
+        //NOTA: No podemos ponerlo con sintaxis arrow function porque no se podría acceder a las propiedades del objeto con this.
+
+        alumno.getInfo = function() {
+            return 'El alumno ' + this.nombre + ' ' 
+            + this.apellidos + ' tiene ' + this.edad + ' años'
+        }
+        console.log(alumno.getInfo());
+
+        //Propagación de propiedades
+        //El operador de propagación(rest operator), ... permite extraer las propiedades de un objeto.
+
+        const personaCarlos = {
+        nombre: 'Carlos',
+        apellidos: 'Pérez Ortiz',
+        edad: 19,
+        };
+        const alumnoCarlos = {
+        ...personaCarlos,
+        ciclo: 'DAW',
+        curso: 2,
+        };
+        console.log(personaCarlos);
+        console.log(alumnoCarlos);
+
+        //Desestructuración de objetos
+        //permite extraer directamente a variables sólo las propiedades que necesitemos de un objeto.
+
+        const personaCharlos = {
+            nombre: 'Carlos',
+            apellidos: 'Pérez Ortiz',
+            edad: 19,
+        };
+
+        function muestraNombre({nombre, apellidos}) {
+            console.log('El nombre es ' + nombre + ' ' + apellidos)
+        }
+
+        muestraNombre(personaCharlos);
+
+        //Comparación de objetos
+
+        /*En Javascript los objetos se comparan por referencia, 
+        no por valor. Por lo que dos objetos con los mismos valores no son iguales:*/
+        const a = {id:2, name: 'object 2'}
+        const b = {id:2, name: 'object 2'}
+        console.log(a === b);    // muestra false
+
+    
+
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </script>
+</body>
+</html>

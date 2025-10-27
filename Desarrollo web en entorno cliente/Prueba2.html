@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <!--💪 Ejercicio: Mensajes escalonados
+        Crea un programa que muestre tres mensajes en la consola,
+        uno detrás de otro, con una pausa de 2 segundos entre cada uno.
+        Cada mensaje debe venir de una función diferente.
+        Requisitos: Declara tres funciones:
+        mensaje1() → muestra "Preparados..."
+        mensaje2() → muestra "Listos..."
+        mensaje3() → muestra "¡Ya!"
+        Usa setTimeout() para que:
+        mensaje1() se ejecute al inicio.
+        mensaje2() se ejecute 2 segundos después.
+        mensaje3() se ejecute 4 segundos después.-->
+
+    <script>
+        "use strict";
+        function mensaje(texto,tiempo) {
+             setTimeout(() => {
+                console.log(texto);
+            }, tiempo);
+        }
+        mensaje("Preparados...",1000);
+        mensaje("Listos",2000);
+        mensaje("Ya!!!",4000);
+       
+    </script>
+</body>
+</html>

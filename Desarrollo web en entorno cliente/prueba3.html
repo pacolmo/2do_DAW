@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+            <!--🧩 Planteamiento
+            Crea una función llamada relojMensajes() que:
+            Use setInterval() para mostrar el mensaje "Tick Tock..." cada 2 segundos ⏱️.
+            Después de 10 segundos, se detenga automáticamente usando clearInterval().
+            🧠 Pistas
+            setInterval(función, tiempo) ejecuta la función cada cierto tiempo (en milisegundos).
+            Guarda el resultado de setInterval() en una variable, por ejemplo let intervalo = setInterval(...);
+            Para detenerlo, usa clearInterval(intervalo);
+            Puedes usar setTimeout() para decidir cuándo parar el intervalo.-->
+<body>
+    <script>
+        "use strict";
+
+        function relojMensajes() {
+            let contador = 0;
+            let mensaje = setInterval(() => {
+            console.log(`Tick tock...`);
+            contador++; 
+            
+            }, 2000);
+            
+                 setTimeout(() => {
+                    clearInterval(mensaje);
+                    console.log("Reloj detenido después de 10 segundos");
+                }, 10000); 
+        }
+// 
+        relojMensajes();
+    </script>
+</body>
+</html>
