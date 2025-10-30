@@ -1,9 +1,8 @@
-const body = document.body;
-body.appendChild("Hello World","bye");
+const body= document.body;
+//body.append("hello World","bye");
 
-const div = document.createElement("div");
-const strong = document.createElement("strong");
-div.innerText = "hello world";
-//body.append(div);
-div.textContent;
-console.log(div);
+const div =  document.createElement('div');
+//div.innerText = "Hello World";
+div.textContent = "Hellow world 2";
+body.append(div);
+
