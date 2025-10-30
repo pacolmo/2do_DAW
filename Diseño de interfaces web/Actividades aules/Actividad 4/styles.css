@@ -1,0 +1,13 @@
+p::first-line{
+    
+    text-transform: uppercase;
+}
+p::first-letter{
+    font-size: 35px;
+}
+p::before{
+    content:"^";
+}
+p::after{
+    content:"@@";
+}

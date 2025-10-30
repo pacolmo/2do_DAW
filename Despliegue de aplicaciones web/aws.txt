@@ -1,3 +1,23 @@
 EC2 Virtual Box
 Instancia _> Maquina virtual
 
+
+
+Proycto
+Leer el enunciado e ir haceindo el entidad relacion, analisis de requisitos
+Reto 1 y Reto 2 con los cronogramas
+
+AWS Practica
+Darse de alta con el enlace para dar de alta en el laboratorio con un numero
+dentro del lab ir a modulos
+entrar AWS lerner lab
+aparece el dinero y no llegar hasta el final del dinero, antes de llegar a las 4h apagar y encender.
+la bolita en verder se ouede entrar
+poner en la lupa EC que es el servicio a usar
+entramos y creamos la maquina u instancia
+LA primera maquina sera Ubuntu Server
+fijarse siempre en la capa gratuita
+sleccionar el so ubuntu
+
+fraolmseg@alu.edu.gva.es
+1Neumatic1

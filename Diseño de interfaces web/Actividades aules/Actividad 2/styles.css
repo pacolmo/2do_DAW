@@ -1,0 +1,18 @@
+img[data-categoria="paisaje"]{
+    border:green solid 3px;
+}
+img[data-categoria]{
+    box-shadow: 20px 20px 15px rgb(16, 33, 118);
+}
+input[type="email"]{
+    border-color: brown;
+}
+input[placeholder]{
+    padding:10px;
+}
+input[type^="text"]{
+    color: rgb(255, 80, 240);
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 7.5px;
+    border-color: yellow;
+}

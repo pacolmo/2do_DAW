@@ -1,0 +1,23 @@
+a:hover{
+    color:red;
+}
+li:nth-child(odd){
+    background-color: aqua;
+}
+li:nth-child(even){
+    background-color: rgb(85, 206, 79);
+}
+a:visited{
+    color: pink;
+}
+button:active{
+    color: rgb(156, 10, 10);
+    padding: 5px;
+}
+input:focus{
+    border-radius: 8px;
+    color: aqua;
+}
+li:first-child,:last-of-type{
+    border-radius: 10px;;
+}

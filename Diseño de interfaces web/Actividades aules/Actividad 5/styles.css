@@ -1,0 +1,18 @@
+.contenedor p{
+    color: red;
+}
+.contenedor > p{
+    color: rgb(0, 255, 68);
+}
+h1 + p{
+    background-color: red;
+    font-style: oblique;
+}
+h1~ p{
+        background-color: tomato;
+        font-weight:bold;
+}
+div.caja > span + p{
+    font-size:larger;
+    color: orange;
+}
