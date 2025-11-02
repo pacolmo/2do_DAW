@@ -1,0 +1,16 @@
+-Lo primero es crear dos variables, una con el abcedario normal
+y la otra con el cifrado, es decir la primera letra seria la que hace el numero 14(N).
+
+-Creamos la variable donde guardaremos el resultado y que será una cadena vacia.
+
+-Creamos un bucle donde aplicamos la logica del programa,
+con un for que recorra toda la cadena, en una nueva variable, 
+guardamos los caracteres que va obteniendo.
+
+-Con indexOf buscamos la posicion de cada caracter(el indice) en el abcdario original.
+Para comprobar si se encuantra el caracter, añadimos una condición:
+si el indice es === a -1, quiere decir que no lo ha encontrado y se añade al resultado
+pero sin cambiarlo, y si lo encuentra, ese mismo indice se usa para buscar la letra
+del cifrado, añadiendose a la variable resultado.
+
+Por ultimo, devolvemos el resultado y mostramos por consola.

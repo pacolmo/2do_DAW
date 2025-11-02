@@ -1,0 +1,22 @@
+Para Realizar este ejercicio hay que desglosarlo de la siguiente manera:
+1 Limpiar la cadena:
+le pasamos mediante una variable global la cadena,
+despues se pasa toda la cadena a mayúscula o a minúscula
+depues hay que reemplazar los carcateres que no nos sirven
+y lo hacemos con el metodo replace()
+con esto agrupamos todos los caracteres a buscar[...]
+este simbolo ^ dentro de []  siginifica NO 
+a-z es cualquier letra de la a a la z
+0-9 cuaquier numeros del 0 al 9
+al juntarlo todo, decimos que encuentra un carcater que NO sea 
+una letra minúscula o un número.
+la g siginifica global es decir que busque en la cadena completa
+y las ''  es con lo que se reemplaza el caracter a buscar y como no
+queremos reemplazarlo con nada, pues se borra.
+
+2 Invertir la cadena
+Creamos una nueva variable donde invertiremos la cadena que ya tenemos Limpiar
+ usamos primero el metodo split() para separar los caracteres, luego reverse para invertirla y por 
+ ultimo join para volver a unir la cadena.
+
+ 3 Comparar con un returns las variables limpiar e invertir y devuelve true o false.

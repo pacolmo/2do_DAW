@@ -1,0 +1,21 @@
+-Lo primero seria meter la informacion de las letras y números en un array bidemensional,
+en el que las letras seran las claves y los números los valores.
+
+-Creamos una variable resultado qué esté vacia para acumular la cadena romana.
+
+-Recorremos el array con un bucle for of con la sintaxis de desestructuración : for(let[clave,valor] of numeros).
+  Es un bucle clave valor del array numeros.
+
+-Tenemos que poner una condicion de que si el numero que introduces como parametro
+ es mayor o igual que el valor añada la clave(letra) a la variable resultado y siga iterando
+  sobre el bucle hasta tener todas sus claves.
+
+-resultado += clave;: Añadimos la letra romana (la clave) a nuestra variable resultado.
+-nums -= valor;: Esta es la parte crucial. "Gastamos" o "restamos" el valor que acabamos de añadir.
+
+Si nums era 36 y acabamos de añadir una "X" (valor 10), ahora nums pasa a ser 26.
+El bucle while se volverá a ejecutar con 26.
+  (Usamos un while en vez de un if porque puede que una misma letra se repita varias veces(ej 30 XXX)
+  y while nos lo permite.)
+
+ Por ultimo devolvemos el resultado y mostramos por consola.

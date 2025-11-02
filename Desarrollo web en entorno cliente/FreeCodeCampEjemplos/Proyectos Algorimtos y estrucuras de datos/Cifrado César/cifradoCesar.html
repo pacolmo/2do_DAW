@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function rot13(str) {
+ 
+       // 1. Creamos nuestras "llaves" del cifrado.
+  let abcdario ="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let abcdarioCifrado ="NOPQRSTUVWXYZABCDEFGHIJKLM";
+  // 2. Creamos una variable para guardar la cadena decodificada.
+    let resultado = "";
+  // 3. Recorremos cada caracter de la cadena de entrada (str).
+    for (let i = 0; i < str.length; i++) {
+       let char = str[i];
+
+    // 4. Buscamos la POSICIÓN (índice) del caracter en el alfabeto original.
+        let indice = abcdario.indexOf(char);
+
+    // 5. Comprobamos si el caracter se encontró en el alfabeto.
+    if (indice === -1) {
+        resultado += char;
+
+    }else{
+        resultado += abcdarioCifrado[indice];
+    }
+ }
+      return resultado;
+    }
+    
+console.log("Cadena Cifrada: CNPB BYZB FRTHEN");
+console.log("Cadena Descifrada:",(rot13("CNPB BYZB FRTHEN")));
+    </script>
+</body>
+</html>

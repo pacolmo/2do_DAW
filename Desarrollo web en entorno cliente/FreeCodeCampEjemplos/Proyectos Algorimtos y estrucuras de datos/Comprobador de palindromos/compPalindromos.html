@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+let cadena1 = "2_A3*3#A2";
+    function palindromo(str) {
+    // --- PASO 1: Limpiar la cadena ---
+      let limpiarStr = str.toUpperCase().replace(/[^a-z0-9]/g,'');
+    // --- PASO 2: Invertir la cadena limpia ---
+      let invertirStr = limpiarStr.split('').reverse().join('');
+    // --- PASO 3: Comparar ---
+    return invertirStr === limpiarStr;
+
+    }  
+    let resultado1 = palindromo(cadena1);
+    console.log(`La palabra '${cadena1}' es un palindromo: ${resultado1} `);
+
+   
+    
+
+
+</script>
+</body>
+</html>

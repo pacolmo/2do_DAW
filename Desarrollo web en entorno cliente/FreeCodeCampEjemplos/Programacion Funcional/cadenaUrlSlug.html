@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Implementa la urlSlugfunción para que convierta una cadena titley devuelva la versión con guiones de la URL. Puedes usar cualquiera de los métodos descritos en esta sección, pero no uses ` replace. Estos son los requisitos:
+        La entrada es una cadena con espacios y palabras en mayúsculas iniciales.
+        La salida es una cadena de texto con los espacios entre palabras reemplazados por un guion ( -).
+        El resultado debe estar escrito completamente en minúsculas.
+        La salida no debe contener espacios. -->
+<script>
+   
+   // Only change code below this line
+function urlSlug(title) {
+     return title.toLowerCase().trim().split(/\s+/).join("-");
+}
+// Only change code above this line
+urlSlug("A Mind Needs Books Like A Sword Needs A Whetstone");
+
+//Método every para comprobar que cada elemento de un array cumple un criterio
+
+/*Utilice el every método dentro de la checkPositive función para comprobar
+si todos los elementos arrson positivos.
+La función debe devolver un valor booleano. */
+
+function checkPositive(arr) {
+  // Only change code below this line
+
+  return arr.every(function(value){
+    return value > 0;
+  });
+
+  // Only change code above this line
+}
+
+checkPositive([1, 2, 3, -4, 5]);
+
+/* Método some para comprobar si algún elemento de un array cumple un criterio. 
+Utilice el somemétodo dentro de la checkPositivefunción 
+para comprobar si algún elemento arr es positivo.
+La función debe devolver un valor booleano.*/
+
+function checkPositive(arr) {
+  // Only change code below this line
+return arr.some(function(value){
+return value > 0;
+});
+
+  // Only change code above this line
+}
+
+checkPositive([1, 2, 3, -4, 5]);
+
+/*Curtido y aplicación parcial
+La aridad de una función es el número de argumentos que requiere.
+Currificar una función significa convertir una función de aridad N en N funciones de aridad 1.
+En otras palabras, reestructura una función para que tome un argumento,
+luego devuelva otra función que tome el siguiente argumento, y así sucesivamente.*/
+
+//
+function add(x) {
+  // Only change code below this line
+return function(y){
+  return function(z){
+    return x + y + z;
+  }
+}
+  // Only change code above this line
+}
+
+add(10)(20)(30);
+
+</script>
+</body>
+</html>

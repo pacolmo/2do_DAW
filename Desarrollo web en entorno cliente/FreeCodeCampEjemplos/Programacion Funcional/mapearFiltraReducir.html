@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Completa el código de la squareList función usando cualquier combinación de `int` map(), filter()`float` 
+     y reduce()`float`. La función debe devolver un nuevo array que contenga los cuadrados 
+     de los enteros positivos (los números decimales no son enteros) cuando se le pase un array de números reales.
+     Un ejemplo de un array de números reales es `[0, 1]` [-3, 4.8, 5, 3, -3.2].
+    Nota: Su función no debe utilizar ningún tipo de forbucles whileni forEach()funciones. -->
+
+    <script>
+        const squareList = arr => {
+  // Only change code below this line
+ 
+  return arr.filter(num=>{
+    return Number.isInteger(num) && num > 0;
+  }).map(positivoInt => {
+    return positivoInt * positivoInt;
+  });
+  // Only change code above this line
+};
+
+const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
+console.log(squaredIntegers);
+    </script>
+</body>
+</html>
