@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej-3</title>
+    <style>
+
+        .enlacesExternos{
+            color: orange;
+        }
+        
+    </style>
+</head>
+<body>
+      <a name="list">Lista de enlaces</a>
+        <ul>
+            <li><a href="https://github.com/pacolmo?tab=repositories">Enlace 1</a></li>
+            <li><a href="https://aules.edu.gva.es/fp/course/view.php?id=185331">Enlace 2 </a></li>
+            <li><a href="/tutorial">Enlace 3</a></li>
+            <li><a href="http://internal.com/test">Enlace 4</a></li>
+        </ul>
+        
+    <script>
+
+        let listaEnlaces = document.querySelectorAll('a');
+         
+        for (let enlace of listaEnlaces) {
+            let href = enlace.getAttribute('href');
+            if (!href) continue;
+            if(!href.includes('://'))continue;
+            if(href.startsWith('http://internal.com'))continue;
+
+            //usamos classList para darle estilo en css
+            enlace.classList.add('enlacesExternos');
+        }
+       
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+   
+    // 1. Convertimos todo a mayúsculas para que coincida con el diccionario.
+    
+    // 2. Separamos la cadena en palabras (por los espacios).
+    //    Ej: "HOLA PACO" -> ["HOLA", "PACO"]
+    
+    // 3. Creamos un array vacío para guardar las palabras ya traducidas a Morse.
+
+    // 4. Bucle EXTERNO: Recorremos cada palabra del array 'palabras'.
+        
+        // 5. Separamos la palabra en letras.
+        //    Ej: "HOLA" -> ["H", "O", "L", "A"]
+        
+        // 6. Creamos un array vacío para guardar las letras traducidas de ESTA palabra.
+
+        // 7. Bucle INTERNO: Recorremos cada letra del array 'letras'.
+       
+            // 8. Buscamos la letra en el diccionario
+           
+            // Si no existe (ej: '?' o '!'), simplemente la ignoramos.
+        
+        // 9. Cuando el bucle interno termina, unimos las letras en Morse
+        //    con UN espacio (separador de letras).
+        
+        // 10. Añadimos esa palabra Morse completa a nuestro array de palabras.
+    
+    // 11. Cuando el bucle externo termina, unimos todas las palabras en Morse
+    // con DOS espacios (separador de palabras).

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej-12</title>
+    <style>
+     h1{
+        color:blue;
+     }
+    </style>
+</head>
+<body>
+   
+    <script>
+      function ejecutarTarea() {
+        
+      
+      document.write("<h1>Tarea 12</h1>");
+        let nombreUsuario = prompt("Introduzca su nombre de usuario");
+        let diaNacimiento = prompt("Introduzca su día de nacimiento");
+        let mesNacimiento = prompt("Introduzca su mes de nacimiento");
+        let añoNacimiento = prompt("Introduzca su año de nacimiento");
+
+        document.write(`<p><strong>Buenos días ${nombreUsuario}</strong></p>`);
+
+        let longNombre = nombreUsuario.length;
+         document.write(`<p>Tú nombre tiene ${longNombre} caracteres, incluidos espacios.</p>`);
+
+        let minusculas = nombreUsuario.toLowerCase();
+        let primerA = minusculas.indexOf('a');
+         document.write(`<p>La primera A de  ${nombreUsuario} está en la posición : ${primerA}</p>`);
+
+        let ultimaA = minusculas.lastIndexOf('a');
+         document.write(`<p>La última letra A de ${nombreUsuario} está en la posición : ${ultimaA}</p>`);
+        document.write(`<p>${nombreUsuario} menos las 3 primeras letras: ${nombreUsuario.substring(3)}</p>`);
+
+        let nombreFullMayusculas =  nombreUsuario.toLocaleUpperCase();
+        document.write(`<p>${nombreUsuario} todo a mayusculas: ${nombreFullMayusculas}</p>`);
+
+        //Calcular edad
+        let dia = parseInt(diaNacimiento);
+        let mes = parseInt(mesNacimiento) -1;
+        let ano = parseInt(añoNacimiento);
+
+        let diaActual = new Date();
+        let fechaNacimiento = new Date(ano,mes,dia);
+
+        let edad = diaActual.getFullYear() - fechaNacimiento.getFullYear();
+        document.write(`<p>Tu fecha de nacimiento es : ${edad} </p>`);
+
+        //Calcular dia nacimiento
+        let dias = ["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"];
+         let nombreDia = dias[fechaNacimiento.getDay()];
+         document.write(`<p>Mi día de nacimiento es: ${nombreDia} , del año ${ano}</p>`);
+
+        //Coseno de 180
+
+        let coseno = Math.cos(Math.PI);
+        document.write(`<p>El coseno de 180, es: ${coseno}</p>`);
+
+        //Número Mayor
+        let nums = [34,67,23,75,35,19];
+         let ordenarNums = nums.sort((a,b) => a - b);
+         let numMayor = ordenarNums[ordenarNums.length -1];
+        document.write(`<p>El número mayor, es: ${numMayor}</p>`);
+
+        //Número al azar
+        let num = Math.random();
+        document.write(`<p>El número al azar es: ${num}</p>`);
+      }
+
+      ejecutarTarea();
+    </script>
+
+
+</body>
+</html>

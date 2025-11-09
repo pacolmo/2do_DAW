@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <!-- Código morse
+        Crea un programa que sea capaz de transformar texto natural a código morse y viceversa.
+        Debe detectar automáticamente de qué tipo se trata y realizar la conversión.
+        En morse se soporta raya “—”, punto “.”, un espacio “ “ entre letras 
+        o símbolos y dos espacios entre palabras “ “.
+        El alfabeto morse soportado será el mostrado en https://es.wikipedia.org/wiki/Código_morse.
+        Los datos deben ser recogidos a través de window.prompt().
+        El resultado debe ser mostrado en el body. -->
+
+<script>
+
+    let letrasMorse = {'A': '.-','B': '-...','C': '-.-.','D': '-..','E': '.','F': '..-.','G': '--.','H': '....','I': '..',
+    'J': '.---','K': '-.-','L': '.-..','M': '--','Ñ': '--.--','O': '---','P': '.--.','Q': '--.-','R': '.-.','S': '...',
+    'T': '-','U': '..-',   'V': '...-',  'W': '.--','X': '-..-',  'Y': '-.--',  'Z': '--..', 
+    '0': '-----', '1': '.----', '2': '..---', '3': '...--','4': '....-', '5': '.....', 
+    '6': '-....', '7': '--...','8': '---..', '9': '----.'};
+
+    let morseAletras = { '.-': 'A',    '-...': 'B',  '-.-.': 'C',  '-..': 'D','.': 'E',
+    '..-.': 'F',  '--.': 'G',   '....': 'H',
+    '..': 'I',    '.---': 'J',  '-.-': 'K',   '.-..': 'L','--': 'M',    '-.': 'N',    '--.--': 'Ñ', '---': 'O',
+    '.--.': 'P',  '--.-': 'Q',  '.-.': 'R',   '...': 'S','-': 'T',     '..-': 'U',   '...-': 'V',  '.--': 'W',
+    '-..-': 'X',  '-.--': 'Y',  '--..': 'Z','-----': '0', '.----': '1', '..---': '2', '...--': '3',
+    '....-': '4', '.....': '5', '-....': '6', '--...': '7','---..': '8', '----.': '9'};
+   
+    //Detectar si es texto, o morse
+    function detectarTipoTexto(cadena) {
+        let cadenaMayuscula = cadena.toUpperCase();
+
+        for (let i = 0; i < cadenaMayuscula.length; i++) {
+
+              let caracter = cadenaMayuscula[i];
+
+              if (caracter === '') continue;
+
+              if(letrasMorse[caracter] !== undefined){
+                return "Texto";
+              }
+        }
+                return "Morse";
+    }
+
+    let cadena1 = "Hola me llamo Paco";
+    let cadena2 = ".... --- .-... .-  -- .  .-... .-...  .- -- ---  .--. .- -.-. ---";
+
+   console.log(`'"${cadena1}"' es: ${detectarTipoTexto(cadena1)}`)
+   console.log(`'"${cadena2}"' es: ${detectarTipoTexto(cadena2)}`);
+
+    //Traducir texto a Morse
+
+        function traducirTextoAMorse(cadena) {
+
+            let cadenaMayuscula = cadena.toUpperCase();
+            let palabras = cadenaMayuscula.split(' ');
+            let palabrasEnMorse = [];
+
+            for (let i = 0; i < palabras.length; i++) {
+        
+                let palabraActual = palabras[i];
+                let separarLetras = palabraActual.split('');
+                let letrasEnMorse = [];
+
+                for (let j = 0; j < separarLetras.length; j++) {
+                    let letraActual = separarLetras[j];
+                
+                    if (letrasMorse[letraActual]!== undefined){
+                        
+                        letrasEnMorse.push(letrasMorse[letraActual]);
+                    }
+                }
+                    let palabraMorseCompleta = letrasEnMorse.join(' ');
+                    palabrasEnMorse.push(palabraMorseCompleta);
+            }
+           return palabrasEnMorse.join('  '); 
+        }
+    
+            let miTexto = "Hola me llamo Paco";
+            console.log(`'"${miTexto}"' en Morse es:`);
+            console.log(traducirTextoAMorse(miTexto));
+
+
+</script>
+</body>
+</html>

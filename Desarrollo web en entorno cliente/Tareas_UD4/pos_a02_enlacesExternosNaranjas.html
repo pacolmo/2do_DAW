@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej-2</title>
+    
+</head>
+    <body>
+        <a name="list">Lista de enlaces</a>
+        <ul>
+            <li><a href="https://github.com/pacolmo?tab=repositories">Enlace 1</a></li>
+            <li><a href="https://aules.edu.gva.es/fp/course/view.php?id=185331">Enlace 2 </a></li>
+            <li><a href="/tutorial">Enlace 3</a></li>
+            <li><a href="http://internal.com/test">Enlace 4</a></li>
+        </ul>
+        
+    <script>
+        let listaEnlaces = document.querySelectorAll('a');
+         
+        for (let enlace of listaEnlaces) {
+            let href = enlace.getAttribute('href');
+            //si no tiene href lo saltamos
+            if (!href) continue;
+            //si no tien el protocólo :// saltamos
+            if(!href.includes('://'))continue;
+            //Si si que empieza por:
+            if(href.startsWith('http://internal.com'))continue;
+
+            //si pasa todos los filtro, los externos se pintan de naranja
+            enlace.style.color='orange';
+        }
+        
+    </script>
+
+    </body>
+</html>
