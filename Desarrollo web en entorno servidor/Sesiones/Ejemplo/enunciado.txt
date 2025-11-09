@@ -1,0 +1,47 @@
+Enunciado del Ejercicio: Flujo Básico de Sesiones en PHP
+Objetivo: Crear un flujo web simple de 4 páginas para capturar los datos de un visitante, persistirlos entre páginas usando sesiones de PHP y, finalmente, gestionar la eliminación selectiva de dichos datos.
+
+Requisitos del Sistema
+Se deben crear 4 archivos PHP:
+
+1. login.php (La Página de Captura)
+
+Debe contener un formulario HTML (<form>).
+
+El formulario debe solicitar dos datos: Usuario y Apellido.
+
+El formulario debe enviar sus datos usando el método POST al archivo autentificar.php.
+
+2. autentificar.php (El Almacenamiento de Sesión)
+
+Este archivo debe iniciar (o reanudar) una sesión de PHP.
+
+Debe recoger los datos (usuario y apellido) que llegan por POST.
+
+Debe almacenar ambos valores en la variable superglobal $_SESSION.
+
+Tras guardar los datos, debe mostrar un mensaje (Ej. "Datos guardados") y un enlace que dirija al usuario a final.php.
+
+3. final.php (La Comprobación de Persistencia)
+
+Este archivo debe iniciar la sesión.
+
+Debe recuperar y mostrar en pantalla los valores de usuario y apellido que están guardados en la sesión.
+
+Debe incluir un enlace que dirija al usuario a borrar.php.
+
+4. borrar.php (La Eliminación Selectiva)
+
+Este archivo debe iniciar la sesión.
+
+Debe eliminar únicamente la variable de sesión correspondiente al usuario (usando unset()). No debe destruir la sesión completa.
+
+Para verificar que ha funcionado, debe intentar mostrar ambas variables (usuario y apellido).
+
+Resultado esperado: El script debe mostrar un error o un valor nulo al intentar imprimir el 'usuario' (demostrando que se borró), pero debe seguir mostrando el 'apellido' correctamente (demostrando que la sesión sigue activa).
+
+Punto Extra (Buenas Prácticas):
+
+En final.php y borrar.php, antes de imprimir una variable de sesión, comprueba si existe usando isset() para evitar Warnings de PHP.
+
+Utiliza htmlspecialchars() al imprimir los datos del usuario para prevenir ataques XSS.
